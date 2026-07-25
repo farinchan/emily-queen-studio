@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Banner;
+use App\Models\Photography;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
+        Role::create(['name' => 'admin']);
 
         User::create([
             'name' => 'Fajri Rinaldi Chan',
@@ -24,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'about' => 'I am a passionate software developer with a love for creating innovative solutions.',
             'instagram' => 'https://www.instagram.com/fajri_chan/',
-        ]);
+        ])->assignRole('admin');
 
         Banner::create([
             'label' => 'Prewedding · Cappadocia',
@@ -58,6 +61,35 @@ class DatabaseSeeder extends Seeder
             'link' => '/collections/summer-sale',
         ]);
 
+        Photography::create([
+            'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
+            'title' => 'Elegant Wedding',
+            'subtitle' => 'Timeless vows, beautifully captured forever.',
+        ]);
+
+        Photography::create([
+            'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
+            'title' => 'Warm Family',
+            'subtitle' => 'Cherished moments, laughter, and love.',
+        ]);
+
+        Photography::create([
+            'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
+            'title' => 'Graduation Photo',
+            'subtitle' => 'Memories of graduation filled with spirit and pride.',
+        ]);
+
+        Photography::create([
+            'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
+            'title' => 'Joyful Milestone',
+            'subtitle' => 'Your achievement, framed with style.',
+        ]);
+
+        Photography::create([
+            'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
+            'title' => 'Office Group Photo',
+            'subtitle' => 'A warm moment of teamwork and togetherness.',
+        ]);
 
     }
 }
