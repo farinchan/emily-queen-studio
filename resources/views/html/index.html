@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+        content="A complete responsive wedding photography and cinematography portfolio project built with Tailwind CSS."
+        name="description" />
+    <title>AXIOO — Stories of Love and Life</title>
+    <!-- Tailwind CSS Browser CDN -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+
+    <link href="assets/css/tailwind.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+</head>
+
+<body class="bg-[#f6f3ed] text-[#171717] antialiased">
+    <!--
+      Multi-page Tailwind project homepage based on the supplied preview design.
+      Replace all placeholder photographs, brand text, contact details, and links before production use.
+    -->
+    <!-- Header -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-white/0 text-white transition-all duration-500"
+        id="siteHeader">
+        <div class="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
+            <button aria-expanded="false" aria-label="Open navigation" class="group flex items-center gap-3 lg:hidden"
+                id="menuButton" type="button">
+                <span class="relative block h-4 w-7">
+                    <span
+                        class="menu-line absolute left-0 top-0 h-px w-7 bg-current transition-all duration-300"></span>
+                    <span
+                        class="menu-line absolute left-0 top-2 h-px w-5 bg-current transition-all duration-300"></span>
+                    <span
+                        class="menu-line absolute left-0 top-4 h-px w-7 bg-current transition-all duration-300"></span>
+                </span>
+                <span class="hidden text-[10px] font-medium uppercase tracking-[.28em] sm:block">Menu</span>
+            </button>
+            <a aria-label="Go to home" class="absolute left-1/2 -translate-x-1/2 text-center" href="index.html">
+                <span class="block text-[28px] font-semibold tracking-[.35em] sm:text-[34px]">AXIOO</span>
+                <span class="mt-1 hidden text-[7px] uppercase tracking-[.52em] sm:block">Stories of Love</span>
+            </a>
+            <nav aria-label="Primary navigation"
+                class="hidden items-center gap-8 text-[10px] font-medium uppercase tracking-[.22em] lg:flex">
+                <div class="group relative py-10">
+                    <button class="flex items-center gap-2 transition-opacity hover:opacity-60" type="button">
+                        Photography
+                        <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div
+                        class="pointer-events-none absolute left-0 top-[84px] w-64 translate-y-3 border border-black/5 bg-white p-7 text-[#171717] opacity-0 shadow-2xl shadow-black/10 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                        <div class="space-y-4 text-[9px] tracking-[.18em]">
+                            <a class="block hover:opacity-45" href="photography-she-said-yes.html">She Said Yes</a>
+                            <a class="block hover:opacity-45" href="photography-tying-the-knot.html">Tying The Knot</a>
+                            <a class="block hover:opacity-45" href="photography-family.html">Family</a>
+                            <a class="block hover:opacity-45" href="photography-baby-maternity.html">Baby &amp;
+                                Maternity</a>
+                            <a class="block hover:opacity-45" href="photography-portraiture.html">Portraiture</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative py-10">
+                    <button class="flex items-center gap-2 transition-opacity hover:opacity-60" type="button">
+                        Videography
+                        <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none"
+                            stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div
+                        class="pointer-events-none absolute left-0 top-[84px] w-56 translate-y-3 border border-black/5 bg-white p-7 text-[#171717] opacity-0 shadow-2xl shadow-black/10 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                        <div class="space-y-4 text-[9px] tracking-[.18em]">
+                            <a class="block hover:opacity-45" href="videography-she-said-yes.html">She Said Yes</a>
+                            <a class="block hover:opacity-45" href="videography-tying-the-knot.html">Tying The Knot</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="py-10 transition-opacity hover:opacity-60" href="about.html">About</a>
+                <a class="py-10 transition-opacity hover:opacity-60" href="contact.html">Get in Touch</a>
+            </nav>
+            <div class="hidden items-center gap-7 lg:flex">
+                <a class="text-[9px] font-medium uppercase tracking-[.2em] transition-opacity hover:opacity-60"
+                    href="contact.html">Bali</a>
+                <span class="h-4 w-px bg-current opacity-30"></span>
+                <button aria-label="Open search" class="transition-opacity hover:opacity-60" id="searchButton"
+                    type="button">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-4-4"></path>
+                    </svg>
+                </button>
+            </div>
+            <button aria-label="Open search" class="lg:hidden" id="mobileSearchButton" type="button">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-4-4"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <!-- Mobile Navigation -->
+    <div aria-hidden="true"
+        class="fixed inset-0 z-[60] invisible bg-[#171717] text-white opacity-0 transition-all duration-500 lg:hidden"
+        id="mobileMenu">
+        <div class="flex h-full flex-col overflow-y-auto px-6 py-8 sm:px-10">
+            <div class="flex items-center justify-between">
+                <span class="text-2xl font-semibold tracking-[.3em]">AXIOO</span>
+                <button aria-label="Close navigation" class="grid h-11 w-11 place-items-center border border-white/20"
+                    id="closeMenuButton" type="button">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
+                        <path d="M5 5l14 14M19 5 5 19"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav aria-label="Mobile navigation" class="my-auto py-16">
+                <div class="border-b border-white/15 py-5">
+                    <button class="mobile-accordion flex w-full items-center justify-between text-left" type="button">
+                        <span class="font-display text-4xl">Photography</span>
+                        <svg class="accordion-icon h-5 w-5 transition-transform" fill="none" stroke="currentColor"
+                            viewbox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content grid max-h-0 overflow-hidden transition-all duration-500">
+                        <div class="space-y-4 pb-3 pt-6 text-xs uppercase tracking-[.2em] text-white/60">
+                            <a class="mobile-link block" href="photography-she-said-yes.html">She Said Yes</a>
+                            <a class="mobile-link block" href="photography-tying-the-knot.html">Tying The Knot</a>
+                            <a class="mobile-link block" href="photography-family.html">Family</a>
+                            <a class="mobile-link block" href="photography-baby-maternity.html">Baby &amp; Maternity</a>
+                            <a class="mobile-link block" href="photography-portraiture.html">Portraiture</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-b border-white/15 py-5">
+                    <button class="mobile-accordion flex w-full items-center justify-between text-left" type="button">
+                        <span class="font-display text-4xl">Videography</span>
+                        <svg class="accordion-icon h-5 w-5 transition-transform" fill="none" stroke="currentColor"
+                            viewbox="0 0 24 24">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content grid max-h-0 overflow-hidden transition-all duration-500">
+                        <div class="space-y-4 pb-3 pt-6 text-xs uppercase tracking-[.2em] text-white/60">
+                            <a class="mobile-link block" href="videography-she-said-yes.html">She Said Yes</a>
+                            <a class="mobile-link block" href="videography-tying-the-knot.html">Tying The Knot</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl"
+                    href="about.html">About</a>
+                <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="contact.html">Get
+                    in Touch</a>
+            </nav>
+            <div
+                class="flex items-end justify-between border-t border-white/15 pt-6 text-[10px] uppercase tracking-[.2em] text-white/55">
+                <div class="space-y-2">
+                    <a class="block" href="#">Instagram</a>
+                    <a class="block" href="#">YouTube</a>
+                </div>
+                <a href="contact.html">Axioo Bali ↗</a>
+            </div>
+        </div>
+    </div>
+    <!-- Search Overlay -->
+    <div aria-hidden="true"
+        class="fixed inset-0 z-[70] invisible flex items-center bg-[#f6f3ed]/98 px-6 opacity-0 backdrop-blur transition-all duration-500"
+        id="searchOverlay">
+        <button aria-label="Close search"
+            class="absolute right-6 top-7 grid h-12 w-12 place-items-center border border-black/20 sm:right-10 sm:top-10"
+            id="closeSearchButton" type="button">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
+                <path d="M5 5l14 14M19 5 5 19"></path>
+            </svg>
+        </button>
+        <div class="mx-auto w-full max-w-5xl">
+            <p class="mb-7 text-[10px] uppercase tracking-[.35em] text-[#817a72]">Search our stories</p>
+            <div class="flex items-center border-b border-black/30 pb-5">
+                <input
+                    class="w-full bg-transparent font-display text-4xl outline-none placeholder:text-black/25 sm:text-6xl lg:text-7xl"
+                    id="searchInput" placeholder="Begin typing to search" type="search" />
+                <svg class="h-7 w-7 shrink-0" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-4-4"></path>
+                </svg>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[10px] uppercase tracking-[.2em] text-[#817a72]">
+                <span>Popular:</span>
+                <button data-search="wedding">Wedding</button>
+                <button data-search="prewedding">Prewedding</button>
+                <button data-search="family">Family</button>
+                <button data-search="portrait">Portrait</button>
+            </div>
+        </div>
+    </div>
+    <main>
+        <!-- Hero -->
+        <section class="relative h-screen min-h-[680px] overflow-hidden bg-black text-white" id="home">
+            <div class="absolute inset-0" id="heroSlides">
+                <article class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000"
+                    data-index="0">
+                    <img alt="Wedding couple walking outdoors" class="h-full w-full object-cover"
+                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/30"></div>
+                    <div
+                        class="absolute inset-x-0 bottom-20 mx-auto max-w-[1600px] px-6 sm:bottom-24 sm:px-10 lg:bottom-28 lg:px-16">
+                        <div class="max-w-4xl">
+                            <p class="mb-5 text-[9px] uppercase tracking-[.32em] text-white/75 sm:text-[10px]">
+                                Prewedding · Cappadocia</p>
+                            <h1
+                                class="font-display text-5xl leading-[.88] tracking-[-.03em] sm:text-7xl lg:text-[108px]">
+                                Side by Side</h1>
+                            <p
+                                class="mt-5 max-w-xl text-xs font-light uppercase leading-6 tracking-[.18em] text-white/75 sm:text-sm">
+                                Brian &amp; Tiffany · A quiet adventure above the clouds</p>
+                            <a class="mt-8 inline-flex items-center gap-4 border-b border-white/50 pb-2 text-[9px] uppercase tracking-[.25em] transition-all hover:gap-6 hover:border-white"
+                                href="story.html">Explore Story <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="hero-slide pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000"
+                    data-index="1">
+                    <img alt="Bride and groom in an elegant venue" class="h-full w-full object-cover"
+                        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/30"></div>
+                    <div
+                        class="absolute inset-x-0 bottom-20 mx-auto max-w-[1600px] px-6 sm:bottom-24 sm:px-10 lg:bottom-28 lg:px-16">
+                        <div class="max-w-4xl">
+                            <p class="mb-5 text-[9px] uppercase tracking-[.32em] text-white/75 sm:text-[10px]">Wedding ·
+                                Jakarta</p>
+                            <h2
+                                class="font-display text-5xl leading-[.88] tracking-[-.03em] sm:text-7xl lg:text-[108px]">
+                                Promises, Kept</h2>
+                            <p
+                                class="mt-5 max-w-xl text-xs font-light uppercase leading-6 tracking-[.18em] text-white/75 sm:text-sm">
+                                Sebastian &amp; Linda · A celebration filled with grace</p>
+                            <a class="mt-8 inline-flex items-center gap-4 border-b border-white/50 pb-2 text-[9px] uppercase tracking-[.25em] transition-all hover:gap-6 hover:border-white"
+                                href="story.html">Explore Story <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="hero-slide pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000"
+                    data-index="2">
+                    <img alt="Happy family portrait" class="h-full w-full object-cover"
+                        src="https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/30"></div>
+                    <div
+                        class="absolute inset-x-0 bottom-20 mx-auto max-w-[1600px] px-6 sm:bottom-24 sm:px-10 lg:bottom-28 lg:px-16">
+                        <div class="max-w-4xl">
+                            <p class="mb-5 text-[9px] uppercase tracking-[.32em] text-white/75 sm:text-[10px]">Family ·
+                                Portraiture</p>
+                            <h2
+                                class="font-display text-5xl leading-[.88] tracking-[-.03em] sm:text-7xl lg:text-[108px]">
+                                Forever Found</h2>
+                            <p
+                                class="mt-5 max-w-xl text-xs font-light uppercase leading-6 tracking-[.18em] text-white/75 sm:text-sm">
+                                A collection of laughter, tenderness, and home</p>
+                            <a class="mt-8 inline-flex items-center gap-4 border-b border-white/50 pb-2 text-[9px] uppercase tracking-[.25em] transition-all hover:gap-6 hover:border-white"
+                                href="photography-family.html">Explore Story <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
+                <article
+                    class="hero-slide pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000"
+                    data-index="3">
+                    <img alt="Bride in a wedding dress" class="h-full w-full object-cover"
+                        src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-black/30"></div>
+                    <div
+                        class="absolute inset-x-0 bottom-20 mx-auto max-w-[1600px] px-6 sm:bottom-24 sm:px-10 lg:bottom-28 lg:px-16">
+                        <div class="max-w-4xl">
+                            <p class="mb-5 text-[9px] uppercase tracking-[.32em] text-white/75 sm:text-[10px]">Editorial
+                                · Bali</p>
+                            <h2
+                                class="font-display text-5xl leading-[.88] tracking-[-.03em] sm:text-7xl lg:text-[108px]">
+                                Unseen Beginnings</h2>
+                            <p
+                                class="mt-5 max-w-xl text-xs font-light uppercase leading-6 tracking-[.18em] text-white/75 sm:text-sm">
+                                A modern romance shaped by tradition and light</p>
+                            <a class="mt-8 inline-flex items-center gap-4 border-b border-white/50 pb-2 text-[9px] uppercase tracking-[.25em] transition-all hover:gap-6 hover:border-white"
+                                href="photography-portraiture.html">Explore Story <span>→</span></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- Hero controls -->
+            <div class="absolute bottom-7 right-6 z-20 flex items-center gap-5 sm:bottom-10 sm:right-10 lg:right-16">
+                <button aria-label="Previous slide"
+                    class="grid h-10 w-10 place-items-center border border-white/35 transition-colors hover:bg-white hover:text-black"
+                    id="prevSlide" type="button">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <div aria-label="Hero slide navigation" class="flex items-center gap-3" id="heroDots"></div>
+                <button aria-label="Next slide"
+                    class="grid h-10 w-10 place-items-center border border-white/35 transition-colors hover:bg-white hover:text-black"
+                    id="nextSlide" type="button">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="absolute bottom-8 left-6 z-20 hidden items-center gap-4 sm:flex sm:left-10 lg:left-16">
+                <span class="h-px w-12 bg-white/60"></span>
+                <span class="text-[8px] uppercase tracking-[.3em] text-white/70">Scroll to discover</span>
+            </div>
+        </section>
+        <!-- Intro -->
+        <section class="px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40">
+            <div class="reveal mx-auto grid max-w-[1400px] gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+                <div>
+                    <p class="mb-5 text-[9px] uppercase tracking-[.34em] text-[#817a72]">Photography · Cinematography
+                    </p>
+                    <h2 class="font-display text-5xl leading-[.98] sm:text-6xl lg:text-7xl">We turn fleeting moments
+                        into stories that stay.</h2>
+                </div>
+                <div class="lg:pl-24">
+                    <p class="max-w-xl text-sm font-light leading-8 text-black/65 sm:text-base">A collective of
+                        photographers, filmmakers, designers, editors, and stylists crafting sincere visual narratives
+                        for weddings, families, and modern portraits.</p>
+                    <a class="mt-8 inline-flex items-center gap-4 border-b border-black/30 pb-2 text-[9px] uppercase tracking-[.24em] transition-all hover:gap-7 hover:border-black"
+                        href="about.html">Meet the studio <span>→</span></a>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Mosaic -->
+        <section class="pb-28 sm:pb-36 lg:pb-44">
+            <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+                <div class="grid gap-4 md:grid-cols-12 md:grid-rows-[420px_260px] lg:grid-rows-[520px_330px]">
+                    <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-8 md:row-span-1"
+                        href="photography-tying-the-knot.html">
+                        <img alt="Elegant wedding ceremony" class="h-full w-full object-cover opacity-90"
+                            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-10">
+                            <p class="mb-3 text-[9px] uppercase tracking-[.26em] text-white/65">Tying The Knot</p>
+                            <h3 class="font-display text-4xl sm:text-5xl">A Holy Day</h3>
+                            <p class="mt-3 text-[10px] uppercase tracking-[.2em] text-white/70">Wedding photography by
+                                Tonny</p>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-4 md:row-span-2"
+                        href="videography-tying-the-knot.html">
+                        <img alt="Wedding couple in a garden" class="h-full w-full object-cover opacity-90"
+                            src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&amp;fit=crop&amp;w=1200&amp;q=88" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10"></div>
+                        <div
+                            class="absolute right-6 top-7 grid h-14 w-14 place-items-center rounded-full border border-white/55 text-white transition-transform duration-500 group-hover:scale-110">
+                            <svg class="ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
+                            <p class="mb-3 text-[9px] uppercase tracking-[.26em] text-white/65">Wedding Film</p>
+                            <h3 class="font-display text-4xl sm:text-5xl">Not Yet,<br />Then Forever</h3>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-4"
+                        href="photography-she-said-yes.html">
+                        <img alt="Newlywed couple laughing" class="h-full w-full object-cover opacity-85"
+                            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=1100&amp;q=88" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                            <p class="mb-2 text-[8px] uppercase tracking-[.25em] text-white/65">She Said Yes</p>
+                            <h3 class="font-display text-3xl">Life Could Be a Dream</h3>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-4"
+                        href="photography-portraiture.html">
+                        <img alt="Portrait of a bride" class="h-full w-full object-cover opacity-85"
+                            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=1100&amp;q=88" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent"></div>
+                        <div class="absolute inset-x-0 bottom-0 p-6 text-white">
+                            <p class="mb-2 text-[8px] uppercase tracking-[.25em] text-white/65">Portraiture</p>
+                            <h3 class="font-display text-3xl">Quiet Confidence</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Journal -->
+        <section class="border-t border-black/10 px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40" id="journal">
+            <div class="mx-auto max-w-[1400px]">
+                <div class="reveal mb-16 flex flex-col gap-8 sm:mb-24 md:flex-row md:items-end md:justify-between">
+                    <div>
+                        <p class="mb-5 text-[9px] uppercase tracking-[.34em] text-[#817a72]">Selected stories</p>
+                        <h2 class="font-display text-6xl sm:text-7xl lg:text-8xl">Latest Journal</h2>
+                    </div>
+                    <a class="inline-flex w-fit items-center gap-4 border-b border-black/30 pb-2 text-[9px] uppercase tracking-[.24em] transition-all hover:gap-7 hover:border-black"
+                        href="journal.html">View all stories <span>→</span></a>
+                </div>
+                <div class="divide-y divide-black/12 border-y border-black/12">
+                    <!-- Article 1 -->
+                    <article
+                        class="journal-item reveal group grid gap-8 py-10 sm:py-14 lg:grid-cols-[120px_1fr_280px] lg:items-center lg:gap-14">
+                        <div class="flex items-center gap-4 lg:block">
+                            <span class="font-display text-5xl leading-none sm:text-6xl">12</span>
+                            <div class="mt-2 text-[9px] uppercase leading-5 tracking-[.22em] text-[#817a72]">
+                                <span class="block">Jun</span>
+                                <span class="block">2026</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mb-3 text-[9px] uppercase tracking-[.24em] text-[#817a72]">Photography · Journal
+                            </p>
+                            <h3
+                                class="font-display text-4xl transition-transform duration-500 group-hover:translate-x-2 sm:text-5xl">
+                                Introducing Colin</h3>
+                            <p class="mt-3 text-xs uppercase tracking-[.17em] text-black/55">A fresh modern perspective
+                                joins the team</p>
+                        </div>
+                        <a aria-label="Open story detail"
+                            class="image-zoom relative aspect-[16/10] overflow-hidden bg-[#dfd5c7]" href="story.html">
+                            <img alt="Portrait of a photographer"
+                                class="h-full w-full object-cover grayscale transition duration-700 group-hover:grayscale-0"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                        </a>
+                    </article>
+                    <!-- Article 2 -->
+                    <article
+                        class="journal-item reveal group grid gap-8 py-10 sm:py-14 lg:grid-cols-[120px_1fr_280px] lg:items-center lg:gap-14">
+                        <div class="flex items-center gap-4 lg:block">
+                            <span class="font-display text-5xl leading-none sm:text-6xl">11</span>
+                            <div class="mt-2 text-[9px] uppercase leading-5 tracking-[.22em] text-[#817a72]">
+                                <span class="block">Jun</span>
+                                <span class="block">2026</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mb-3 text-[9px] uppercase tracking-[.24em] text-[#817a72]">Videography · Journal
+                            </p>
+                            <h3
+                                class="font-display text-4xl transition-transform duration-500 group-hover:translate-x-2 sm:text-5xl">
+                                Introducing Gerald</h3>
+                            <p class="mt-3 text-xs uppercase tracking-[.17em] text-black/55">Cinema, movement, and
+                                honest emotion</p>
+                        </div>
+                        <a aria-label="Open story detail"
+                            class="image-zoom relative aspect-[16/10] overflow-hidden bg-[#dfd5c7]" href="story.html">
+                            <img alt="Portrait of a filmmaker"
+                                class="h-full w-full object-cover grayscale transition duration-700 group-hover:grayscale-0"
+                                src="https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                        </a>
+                    </article>
+                    <!-- Article 3 -->
+                    <article
+                        class="journal-item reveal group grid gap-8 py-10 sm:py-14 lg:grid-cols-[120px_1fr_280px] lg:items-center lg:gap-14">
+                        <div class="flex items-center gap-4 lg:block">
+                            <span class="font-display text-5xl leading-none sm:text-6xl">06</span>
+                            <div class="mt-2 text-[9px] uppercase leading-5 tracking-[.22em] text-[#817a72]">
+                                <span class="block">Apr</span>
+                                <span class="block">2026</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mb-3 text-[9px] uppercase tracking-[.24em] text-[#817a72]">Photography · She Said
+                                Yes</p>
+                            <h3
+                                class="font-display text-4xl transition-transform duration-500 group-hover:translate-x-2 sm:text-5xl">
+                                Life Could Be a Dream</h3>
+                            <p class="mt-3 text-xs uppercase tracking-[.17em] text-black/55">Strip away the noise, and
+                                what remains matters</p>
+                        </div>
+                        <a aria-label="Open story detail"
+                            class="image-zoom relative aspect-[16/10] overflow-hidden bg-[#dfd5c7]" href="story.html">
+                            <img alt="Wedding couple posing outdoors"
+                                class="h-full w-full object-cover grayscale transition duration-700 group-hover:grayscale-0"
+                                src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                        </a>
+                    </article>
+                    <!-- Article 4 -->
+                    <article
+                        class="journal-item reveal group grid gap-8 py-10 sm:py-14 lg:grid-cols-[120px_1fr_280px] lg:items-center lg:gap-14">
+                        <div class="flex items-center gap-4 lg:block">
+                            <span class="font-display text-5xl leading-none sm:text-6xl">17</span>
+                            <div class="mt-2 text-[9px] uppercase leading-5 tracking-[.22em] text-[#817a72]">
+                                <span class="block">Mar</span>
+                                <span class="block">2026</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="mb-3 text-[9px] uppercase tracking-[.24em] text-[#817a72]">Videography · Tying The
+                                Knot</p>
+                            <h3
+                                class="font-display text-4xl transition-transform duration-500 group-hover:translate-x-2 sm:text-5xl">
+                                Some Love Stories Start With “Not Yet”</h3>
+                            <p class="mt-3 text-xs uppercase tracking-[.17em] text-black/55">A swipe that did not work —
+                                until it did</p>
+                        </div>
+                        <a aria-label="Open story detail"
+                            class="image-zoom relative aspect-[16/10] overflow-hidden bg-[#dfd5c7]" href="story.html">
+                            <img alt="Romantic wedding reception"
+                                class="h-full w-full object-cover grayscale transition duration-700 group-hover:grayscale-0"
+                                src="https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Film Feature -->
+        <section class="relative min-h-[760px] overflow-hidden bg-black text-white" id="films">
+            <img alt="Wedding ceremony prepared for a film"
+                class="absolute inset-0 h-full w-full object-cover opacity-55"
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-black/25"></div>
+            <div class="relative mx-auto flex min-h-[760px] max-w-[1600px] items-center px-6 py-24 sm:px-10 lg:px-16">
+                <div class="reveal max-w-3xl">
+                    <p class="mb-6 text-[9px] uppercase tracking-[.35em] text-white/60">Featured film</p>
+                    <h2 class="font-display text-6xl leading-[.9] sm:text-8xl lg:text-[110px]">A Love Beyond Words</h2>
+                    <p class="mt-8 max-w-lg text-sm font-light leading-7 text-white/70">A cinematic celebration of the
+                        small gestures, deep glances, and unscripted moments that make a wedding day unforgettable.</p>
+                    <a class="group mt-10 flex items-center gap-5 text-[9px] uppercase tracking-[.28em]"
+                        href="story.html">
+                        <span
+                            class="grid h-16 w-16 place-items-center rounded-full border border-white/55 transition-all duration-500 group-hover:bg-white group-hover:text-black">
+                            <svg class="ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"></path>
+                            </svg>
+                        </span>
+                        Watch film
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-8 right-8 hidden text-[8px] uppercase tracking-[.25em] text-white/50 sm:block">
+                Film No. 024</div>
+        </section>
+        <!-- Instagram Gallery -->
+        <section class="bg-white py-24 sm:py-32 lg:py-40">
+            <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+                <div class="reveal mb-14 flex flex-col gap-7 px-2 sm:mb-20 md:flex-row md:items-end md:justify-between">
+                    <div>
+                        <p class="mb-5 text-[9px] uppercase tracking-[.34em] text-[#817a72]">From Instagram</p>
+                        <h2 class="font-display text-6xl sm:text-7xl">Follow @axioo</h2>
+                    </div>
+                    <div class="flex gap-5 text-[9px] uppercase tracking-[.22em]">
+                        <a class="border-b border-black/25 pb-1 hover:border-black" href="#">Instagram</a>
+                        <a class="border-b border-transparent pb-1 hover:border-black" href="#">Facebook</a>
+                        <a class="border-b border-transparent pb-1 hover:border-black" href="#">YouTube</a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 md:grid-cols-4 lg:gap-3">
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Bride and groom portrait" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Outdoor wedding" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Newlyweds laughing" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Wedding table flowers" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Bride and groom together" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Couple embracing" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Bridal portrait" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                    <a class="image-zoom reveal group relative aspect-square overflow-hidden bg-[#dfd5c7]" href="#">
+                        <img alt="Romantic couple portrait" class="h-full w-full object-cover"
+                            src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&amp;fit=crop&amp;w=900&amp;q=84" />
+                        <div
+                            class="absolute inset-0 grid place-items-center bg-black/0 text-white opacity-0 transition-all duration-500 group-hover:bg-black/35 group-hover:opacity-100">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewbox="0 0 24 24">
+                                <rect height="18" rx="5" width="18" x="3" y="3"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- About + Contact -->
+        <section class="bg-[#dfd5c7]/55 px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40" id="about">
+            <div class="mx-auto grid max-w-[1400px] gap-16 lg:grid-cols-2 lg:gap-24">
+                <div class="reveal">
+                    <p class="mb-5 text-[9px] uppercase tracking-[.34em] text-[#817a72]">About</p>
+                    <h2 class="font-display text-6xl leading-[.95] sm:text-7xl">A house of visual storytellers.</h2>
+                </div>
+                <div class="reveal lg:pt-14">
+                    <p class="text-base font-light leading-8 text-black/65">We are a group of passionate photographers,
+                        cinematographers, designers, editors, and stylists working together to create meaningful visual
+                        masterpieces.</p>
+                    <p class="mt-6 text-base font-light leading-8 text-black/65">Every project begins with listening. We
+                        pay attention to the light, the energy, the unexpected laughter, and the quiet details that
+                        reveal who you truly are.</p>
+                    <a class="mt-10 inline-flex items-center gap-4 border-b border-black/30 pb-2 text-[9px] uppercase tracking-[.24em] transition-all hover:gap-7 hover:border-black"
+                        href="about.html">Read our story <span>→</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#171717] text-white" id="contact">
+        <div class="mx-auto max-w-[1600px] px-6 py-20 sm:px-10 sm:py-28 lg:px-16 lg:py-32">
+            <div
+                class="grid gap-16 border-b border-white/15 pb-20 md:grid-cols-2 lg:grid-cols-[1.25fr_.75fr_.75fr] lg:gap-20">
+                <div class="reveal">
+                    <p class="mb-6 text-[9px] uppercase tracking-[.34em] text-white/45">Get in touch</p>
+                    <h2 class="font-display text-6xl leading-[.95] sm:text-7xl lg:text-8xl">Let us tell your story.</h2>
+                    <a class="mt-10 inline-flex items-center gap-4 border-b border-white/35 pb-2 text-[10px] uppercase tracking-[.24em] transition-all hover:gap-7 hover:border-white"
+                        href="mailto:hello@example.com">hello@example.com <span>→</span></a>
+                </div>
+                <div class="reveal">
+                    <p class="mb-7 text-[9px] uppercase tracking-[.3em] text-white/45">Jakarta Studio</p>
+                    <div class="space-y-3 text-sm font-light leading-7 text-white/70">
+                        <p>By appointment only</p>
+                        <p>Phone +62 800 0000 0000</p>
+                        <p>Wedding enquiries<br />+62 800 0000 0001</p>
+                        <p>Family enquiries<br />+62 800 0000 0002</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <p class="mb-7 text-[9px] uppercase tracking-[.3em] text-white/45">Explore</p>
+                    <div class="grid gap-3 text-[10px] uppercase tracking-[.2em] text-white/70">
+                        <a class="hover:text-white" href="journal.html">Journal</a>
+                        <a class="hover:text-white" href="videography.html">Films</a>
+                        <a class="hover:text-white" href="about.html">About</a>
+                        <a class="hover:text-white" href="contact.html">Contact</a>
+                        <a class="hover:text-white" href="#">Instagram ↗</a>
+                        <a class="hover:text-white" href="#">YouTube ↗</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-10 pt-10 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <span class="block text-3xl font-semibold tracking-[.36em]">AXIOO</span>
+                    <span class="mt-2 block text-[7px] uppercase tracking-[.5em] text-white/45">Tailwind Concept
+                        Clone</span>
+                </div>
+                <div class="flex flex-col gap-3 text-[8px] uppercase tracking-[.2em] text-white/40 sm:text-right">
+                    <p>© <span id="currentYear"></span> Studio Concept. All rights reserved.</p>
+                    <p>Built as an educational UI recreation.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to top -->
+    <button aria-label="Back to top"
+        class="fixed bottom-6 right-6 z-40 grid h-12 w-12 translate-y-5 place-items-center border border-black/15 bg-white text-black opacity-0 shadow-lg transition-all duration-300 hover:bg-black hover:text-white"
+        id="backToTop" type="button">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24">
+            <path d="m6 15 6-6 6 6"></path>
+        </svg>
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const header = document.getElementById('siteHeader');
+            const backToTop = document.getElementById('backToTop');
+            const heroSection = document.getElementById('home');
+
+            // Header style on scroll
+            const updateHeader = () => {
+                const scrolled = window.scrollY > 60;
+                header.classList.toggle('bg-[#f6f3ed]/95', scrolled);
+                header.classList.toggle('backdrop-blur-md', scrolled);
+                header.classList.toggle('text-[#171717]', scrolled);
+                header.classList.toggle('border-black/10', scrolled);
+                header.classList.toggle('shadow-sm', scrolled);
+                header.classList.toggle('text-white', !scrolled);
+                header.classList.toggle('border-white/0', !scrolled);
+
+                const showBackToTop = window.scrollY > window.innerHeight * 0.8;
+                backToTop.classList.toggle('opacity-0', !showBackToTop);
+                backToTop.classList.toggle('translate-y-5', !showBackToTop);
+                backToTop.classList.toggle('pointer-events-none', !showBackToTop);
+            };
+
+            updateHeader();
+            window.addEventListener('scroll', updateHeader, { passive: true });
+
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            // Hero slider
+            const slides = [...document.querySelectorAll('.hero-slide')];
+            const dotsContainer = document.getElementById('heroDots');
+            const prevSlideButton = document.getElementById('prevSlide');
+            const nextSlideButton = document.getElementById('nextSlide');
+            let activeSlide = 0;
+            let heroTimer;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'hero-dot h-1.5 w-1.5 rounded-full bg-white/40 transition-all duration-300';
+                dot.setAttribute('aria-label', `Show slide ${index + 1}`);
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    restartHeroTimer();
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = [...document.querySelectorAll('.hero-dot')];
+
+            function showSlide(index) {
+                activeSlide = (index + slides.length) % slides.length;
+
+                slides.forEach((slide, slideIndex) => {
+                    const isActive = slideIndex === activeSlide;
+                    slide.classList.toggle('opacity-100', isActive);
+                    slide.classList.toggle('opacity-0', !isActive);
+                    slide.classList.toggle('pointer-events-none', !isActive);
+                    slide.setAttribute('aria-hidden', String(!isActive));
+                });
+
+                dots.forEach((dot, dotIndex) => {
+                    const isActive = dotIndex === activeSlide;
+                    dot.classList.toggle('w-8', isActive);
+                    dot.classList.toggle('bg-white', isActive);
+                    dot.classList.toggle('w-1.5', !isActive);
+                    dot.classList.toggle('bg-white/40', !isActive);
+                });
+            }
+
+            function startHeroTimer() {
+                heroTimer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
+            }
+
+            function restartHeroTimer() {
+                window.clearInterval(heroTimer);
+                startHeroTimer();
+            }
+
+            prevSlideButton.addEventListener('click', () => {
+                showSlide(activeSlide - 1);
+                restartHeroTimer();
+            });
+
+            nextSlideButton.addEventListener('click', () => {
+                showSlide(activeSlide + 1);
+                restartHeroTimer();
+            });
+
+            heroSection.addEventListener('mouseenter', () => window.clearInterval(heroTimer));
+            heroSection.addEventListener('mouseleave', startHeroTimer);
+
+            let touchStartX = 0;
+            heroSection.addEventListener('touchstart', event => {
+                touchStartX = event.changedTouches[0].screenX;
+            }, { passive: true });
+            heroSection.addEventListener('touchend', event => {
+                const distance = event.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(distance) > 50) {
+                    showSlide(activeSlide + (distance < 0 ? 1 : -1));
+                    restartHeroTimer();
+                }
+            }, { passive: true });
+
+            showSlide(0);
+            startHeroTimer();
+
+            // Mobile menu
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuButton = document.getElementById('menuButton');
+            const closeMenuButton = document.getElementById('closeMenuButton');
+            const mobileLinks = [...document.querySelectorAll('.mobile-link')];
+
+            const setMobileMenu = open => {
+                mobileMenu.classList.toggle('invisible', !open);
+                mobileMenu.classList.toggle('opacity-0', !open);
+                mobileMenu.setAttribute('aria-hidden', String(!open));
+                menuButton.setAttribute('aria-expanded', String(open));
+                body.classList.toggle('overflow-hidden', open);
+            };
+
+            menuButton.addEventListener('click', () => setMobileMenu(true));
+            closeMenuButton.addEventListener('click', () => setMobileMenu(false));
+            mobileLinks.forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
+
+            document.querySelectorAll('.mobile-accordion').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('.accordion-icon');
+                    const isOpen = content.style.maxHeight;
+                    content.style.maxHeight = isOpen ? null : `${content.scrollHeight}px`;
+                    icon.classList.toggle('rotate-180', !isOpen);
+                });
+            });
+
+            // Search overlay
+            const searchOverlay = document.getElementById('searchOverlay');
+            const searchInput = document.getElementById('searchInput');
+            const searchButtons = [document.getElementById('searchButton'), document.getElementById('mobileSearchButton')];
+            const closeSearchButton = document.getElementById('closeSearchButton');
+
+            const setSearch = open => {
+                searchOverlay.classList.toggle('invisible', !open);
+                searchOverlay.classList.toggle('opacity-0', !open);
+                searchOverlay.setAttribute('aria-hidden', String(!open));
+                body.classList.toggle('overflow-hidden', open);
+                if (open) window.setTimeout(() => searchInput.focus(), 350);
+            };
+
+            searchButtons.forEach(button => button.addEventListener('click', () => setSearch(true)));
+            closeSearchButton.addEventListener('click', () => setSearch(false));
+
+            searchInput.addEventListener('keydown', event => {
+                if (event.key === 'Enter' && searchInput.value.trim()) {
+                    event.preventDefault();
+                    window.location.href = `journal.html?q=${encodeURIComponent(searchInput.value.trim())}`;
+                }
+            });
+
+            document.querySelectorAll('[data-search]').forEach(button => {
+                button.addEventListener('click', () => {
+                    searchInput.value = button.dataset.search;
+                    searchInput.focus();
+                });
+            });
+
+            // Escape key closes overlays
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') {
+                    setMobileMenu(false);
+                    setSearch(false);
+                }
+            });
+
+            // Scroll reveal
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+
+            // Footer year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Wedding films built around voices, anticipation, celebration, and the rhythm that belongs only to that day." name="description"/><title>Tying The Knot — AXIOO Concept</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/tailwind.css" rel="stylesheet"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+</head>
+<body class="bg-[#f4f1eb] text-[#141414] antialiased">
+
+
+
+<div aria-hidden="true" class="fixed inset-0 z-[70] invisible flex items-center bg-[#f6f3ed]/98 px-6 opacity-0 backdrop-blur transition-all duration-500" id="searchOverlay">
+<button aria-label="Close search" class="absolute right-6 top-7 grid h-12 w-12 place-items-center border border-black/20 sm:right-10 sm:top-10" id="closeSearchButton" type="button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg>
+</button>
+<div class="mx-auto w-full max-w-5xl">
+<p class="mb-7 text-[10px] uppercase tracking-[.35em] text-[#817a72]">Search our stories</p>
+<div class="flex items-center border-b border-black/30 pb-5">
+<input class="w-full bg-transparent font-display text-4xl outline-none placeholder:text-black/25 sm:text-6xl lg:text-7xl" id="searchInput" placeholder="Begin typing to search" type="search"/>
+<svg class="h-7 w-7 shrink-0" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+</div>
+<div class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-[10px] uppercase tracking-[.2em] text-[#817a72]">
+<span>Popular:</span>
+<button data-search="wedding">Wedding</button>
+<button data-search="prewedding">Prewedding</button>
+<button data-search="family">Family</button>
+<button data-search="portrait">Portrait</button>
+</div>
+</div>
+</div>
+<!-- Shared Search Overlay -->
+<div aria-hidden="true" class="fixed inset-0 z-[60] invisible bg-[#171717] text-white opacity-0 transition-all duration-500 lg:hidden" id="mobileMenu">
+<div class="flex h-full flex-col overflow-y-auto px-6 py-8 sm:px-10">
+<div class="flex items-center justify-between">
+<a class="text-2xl font-semibold tracking-[.3em]" href="index.html">AXIOO</a>
+<button aria-label="Close navigation" class="grid h-11 w-11 place-items-center border border-white/20" id="closeMenuButton" type="button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"></path></svg>
+</button>
+</div>
+<nav aria-label="Mobile navigation" class="my-auto py-16">
+<div class="border-b border-white/15 py-5">
+<button class="mobile-accordion flex w-full items-center justify-between text-left" type="button">
+<span class="font-display text-4xl">Photography</span>
+<svg class="accordion-icon h-5 w-5 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<div class="accordion-content grid max-h-0 overflow-hidden transition-all duration-500">
+<div class="space-y-4 pb-3 pt-6 text-xs uppercase tracking-[.2em] text-white/60">
+<a class="mobile-link block" href="photography-she-said-yes.html">She Said Yes</a>
+<a class="mobile-link block" href="photography-tying-the-knot.html">Tying The Knot</a>
+<a class="mobile-link block" href="photography-family.html">Family</a>
+<a class="mobile-link block" href="photography-baby-maternity.html">Baby &amp; Maternity</a>
+<a class="mobile-link block" href="photography-portraiture.html">Portraiture</a>
+</div>
+</div>
+</div>
+<div class="border-b border-white/15 py-5">
+<button class="mobile-accordion flex w-full items-center justify-between text-left" type="button">
+<span class="font-display text-4xl">Videography</span>
+<svg class="accordion-icon h-5 w-5 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<div class="accordion-content grid max-h-0 overflow-hidden transition-all duration-500">
+<div class="space-y-4 pb-3 pt-6 text-xs uppercase tracking-[.2em] text-white/60">
+<a class="mobile-link block" href="videography-she-said-yes.html">She Said Yes</a>
+<a class="mobile-link block" href="videography-tying-the-knot.html">Tying The Knot</a>
+</div>
+</div>
+</div>
+<a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="about.html">About</a>
+<a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="contact.html">Get in Touch</a>
+</nav>
+<div class="flex items-end justify-between border-t border-white/15 pt-6 text-[10px] uppercase tracking-[.2em] text-white/55">
+<div class="space-y-2"><a class="block" href="#">Instagram</a><a class="block" href="#">YouTube</a></div>
+<a href="contact.html">Axioo Bali ↗</a>
+</div>
+</div>
+</div>
+<!-- Shared Mobile Navigation -->
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/0 text-white transition-all duration-500" data-header-mode="transparent" id="siteHeader">
+<div class="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
+<button aria-expanded="false" aria-label="Open navigation" class="group flex items-center gap-3 lg:hidden" id="menuButton" type="button">
+<span class="relative block h-4 w-7">
+<span class="menu-line absolute left-0 top-0 h-px w-7 bg-current transition-all duration-300"></span>
+<span class="menu-line absolute left-0 top-2 h-px w-5 bg-current transition-all duration-300"></span>
+<span class="menu-line absolute left-0 top-4 h-px w-7 bg-current transition-all duration-300"></span>
+</span>
+<span class="hidden text-[10px] font-medium uppercase tracking-[.28em] sm:block">Menu</span>
+</button>
+<a aria-label="Go to home" class="absolute left-1/2 -translate-x-1/2 text-center" href="index.html">
+<span class="block text-[28px] font-semibold tracking-[.35em] sm:text-[34px]">AXIOO</span>
+<span class="mt-1 hidden text-[7px] uppercase tracking-[.52em] sm:block">Stories of Love</span>
+</a>
+<nav aria-label="Primary navigation" class="hidden items-center gap-8 text-[10px] font-medium uppercase tracking-[.22em] lg:flex">
+<div class="group relative py-10">
+<button class="flex items-center gap-2 transition-opacity hover:opacity-60" type="button">
+          Photography
+          <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<div class="pointer-events-none absolute left-0 top-[84px] w-64 translate-y-3 border border-black/5 bg-white p-7 text-[#171717] opacity-0 shadow-2xl shadow-black/10 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+<div class="space-y-4 text-[9px] tracking-[.18em]">
+<a class="block hover:opacity-45" href="photography-she-said-yes.html">She Said Yes</a>
+<a class="block hover:opacity-45" href="photography-tying-the-knot.html">Tying The Knot</a>
+<a class="block hover:opacity-45" href="photography-family.html">Family</a>
+<a class="block hover:opacity-45" href="photography-baby-maternity.html">Baby &amp; Maternity</a>
+<a class="block hover:opacity-45" href="photography-portraiture.html">Portraiture</a>
+</div>
+</div>
+</div>
+<div class="group relative py-10">
+<button class="flex items-center gap-2 transition-opacity hover:opacity-60" type="button">
+          Videography
+          <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<div class="pointer-events-none absolute left-0 top-[84px] w-56 translate-y-3 border border-black/5 bg-white p-7 text-[#171717] opacity-0 shadow-2xl shadow-black/10 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+<div class="space-y-4 text-[9px] tracking-[.18em]">
+<a class="block hover:opacity-45" href="videography-she-said-yes.html">She Said Yes</a>
+<a class="block hover:opacity-45" href="videography-tying-the-knot.html">Tying The Knot</a>
+</div>
+</div>
+</div>
+<a class="py-10 transition-opacity hover:opacity-60" href="about.html">About</a>
+<a class="py-10 transition-opacity hover:opacity-60" href="contact.html">Get in Touch</a>
+</nav>
+<div class="hidden items-center gap-7 lg:flex">
+<a class="text-[9px] font-medium uppercase tracking-[.2em] transition-opacity hover:opacity-60" href="contact.html">Bali</a>
+<span class="h-4 w-px bg-current opacity-30"></span>
+<button aria-label="Open search" class="transition-opacity hover:opacity-60" id="searchButton" type="button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+</button>
+</div>
+<button aria-label="Open search" class="lg:hidden" id="mobileSearchButton" type="button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.4" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+</button>
+</div>
+</header>
+<!-- Shared Header: matches index.html --><main>
+<section class="relative min-h-[62vh] overflow-hidden bg-black"><img alt="Tying The Knot" class="absolute inset-0 h-full w-full object-cover opacity-60" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=2200&amp;q=84"/><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-black/10"></div><div class="relative mx-auto flex min-h-[62vh] max-w-[1500px] items-end px-6 pb-16 text-white sm:px-10 lg:px-12 lg:pb-20"><div><p class="text-[10px] uppercase tracking-[.28em] text-white/65">Videography</p><h1 class="mt-4 font-display text-7xl leading-[.85] sm:text-8xl lg:text-[9rem]">Tying The Knot</h1><p class="mt-7 max-w-xl text-sm leading-7 text-white/70">Wedding films built around voices, anticipation, celebration, and the rhythm that belongs only to that day.</p></div></div></section>
+<section class="mx-auto max-w-[1500px] px-6 py-20 sm:px-10 lg:px-12 lg:py-28"><div class="flex flex-wrap gap-2"><button class="filter-button rounded-full border border-black/20 px-5 py-2 text-[9px] uppercase tracking-[.18em] transition active" data-filter="all">All</button><button class="filter-button rounded-full border border-black/20 px-5 py-2 text-[9px] uppercase tracking-[.18em] transition" data-filter="tying the knot">Wedding</button><button class="filter-button rounded-full border border-black/20 px-5 py-2 text-[9px] uppercase tracking-[.18em] transition" data-filter="videography">Bali</button></div><div class="mt-14 grid gap-x-8 gap-y-20 sm:grid-cols-2 lg:grid-cols-3"><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[4/5]" href="story.html"><img alt="Some Stories Start With “Not Yet”" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=2200&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">17<br/>Mar 2026</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Some Stories Start With “Not Yet”</a></h3><p class="mt-2 text-xs text-black/55">Karlo &amp; Mikee — Wedding Film · by Wilson</p><p class="mt-4 text-sm leading-6 text-black/55">A playful story about timing, second chances, and the moment two paths finally move in the same direction.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[3/4]" href="story.html"><img alt="A Leap Across the Map" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&amp;fit=crop&amp;w=1800&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">24<br/>Feb 2026</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">A Leap Across the Map</a></h3><p class="mt-2 text-xs text-black/55">Kavaughn &amp; Amy — Wedding Film · by Robb</p><p class="mt-4 text-sm leading-6 text-black/55">From California to Bali, every mile became part of a story worth remembering.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · she said yes">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[5/6]" href="story.html"><img alt="Side by Side" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&amp;fit=crop&amp;w=1800&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">24<br/>Jun 2025</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · She Said Yes</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Side by Side</a></h3><p class="mt-2 text-xs text-black/55">Brian &amp; Tiffany — Cappadocia · by Robb</p><p class="mt-4 text-sm leading-6 text-black/55">A thousand miles and countless steps, made unforgettable by the person walking beside you.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[4/3]" href="story.html"><img alt="Some Stories Start With “Not Yet” — Encore" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=2200&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">04<br/>May 2025</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Some Stories Start With “Not Yet” — Encore</a></h3><p class="mt-2 text-xs text-black/55">Karlo &amp; Mikee — Wedding Film · by Wilson</p><p class="mt-4 text-sm leading-6 text-black/55">A playful story about timing, second chances, and the moment two paths finally move in the same direction.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[4/5]" href="story.html"><img alt="A Leap Across the Map — Notes" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&amp;fit=crop&amp;w=1800&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">05<br/>Feb 2024</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">A Leap Across the Map — Notes</a></h3><p class="mt-2 text-xs text-black/55">Kavaughn &amp; Amy — Wedding Film · by Robb</p><p class="mt-4 text-sm leading-6 text-black/55">From California to Bali, every mile became part of a story worth remembering.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · she said yes">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[3/4]" href="story.html"><img alt="Side by Side — Chapter II" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&amp;fit=crop&amp;w=1800&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">06<br/>May 2023</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · She Said Yes</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Side by Side — Chapter II</a></h3><p class="mt-2 text-xs text-black/55">Brian &amp; Tiffany — Cappadocia · by Robb</p><p class="mt-4 text-sm leading-6 text-black/55">A thousand miles and countless steps, made unforgettable by the person walking beside you.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[5/6]" href="story.html"><img alt="Some Stories Start With “Not Yet” — Encore" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=2200&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">07<br/>Feb 2025</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Some Stories Start With “Not Yet” — Encore</a></h3><p class="mt-2 text-xs text-black/55">Karlo &amp; Mikee — Wedding Film · by Wilson</p><p class="mt-4 text-sm leading-6 text-black/55">A playful story about timing, second chances, and the moment two paths finally move in the same direction.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[4/3]" href="story.html"><img alt="A Leap Across the Map — Notes" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&amp;fit=crop&amp;w=1800&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">08<br/>May 2024</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">A Leap Across the Map — Notes</a></h3><p class="mt-2 text-xs text-black/55">Kavaughn &amp; Amy — Wedding Film · by Robb</p><p class="mt-4 text-sm leading-6 text-black/55">From California to Bali, every mile became part of a story worth remembering.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · she said yes">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[4/5]" href="story.html"><img alt="Side by Side — Chapter II" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&amp;fit=crop&amp;w=1800&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">09<br/>Feb 2023</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · She Said Yes</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Side by Side — Chapter II</a></h3><p class="mt-2 text-xs text-black/55">Brian &amp; Tiffany — Cappadocia · by Robb</p><p class="mt-4 text-sm leading-6 text-black/55">A thousand miles and countless steps, made unforgettable by the person walking beside you.</p></div></div>
+</article><article class="reveal group" data-card-category="videography · tying the knot">
+<a class="image-zoom block overflow-hidden bg-black/5 aspect-[3/4]" href="story.html"><img alt="Some Stories Start With “Not Yet” — Encore" class="h-full w-full object-cover" loading="lazy" src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=2200&amp;q=84"/><div class="image-overlay absolute"></div></a>
+<div class="mt-5 flex items-start gap-4"><div class="min-w-14 text-[9px] uppercase tracking-[.18em] text-black/45">10<br/>May 2025</div><div><p class="text-[9px] uppercase tracking-[.18em] text-black/45">Videography · Tying The Knot</p><h3 class="mt-2 font-display text-3xl leading-none"><a class="hover:opacity-55" href="story.html">Some Stories Start With “Not Yet” — Encore</a></h3><p class="mt-2 text-xs text-black/55">Karlo &amp; Mikee — Wedding Film · by Wilson</p><p class="mt-4 text-sm leading-6 text-black/55">A playful story about timing, second chances, and the moment two paths finally move in the same direction.</p></div></div>
+</article></div><div class="mt-20 flex justify-center gap-3"><button class="h-11 w-11 bg-black text-white">1</button><button class="h-11 w-11 border border-black/20">2</button><button class="h-11 w-11 border border-black/20">3</button><button class="h-11 px-5 border border-black/20">Next →</button></div></section>
+</main>
+<section class="overflow-hidden border-y border-black/10 py-5"><div class="marquee-track text-[10px] uppercase tracking-[.28em] text-black/45"><span class="px-10">Wedding Photography · Wedding Films · Family · Maternity · Portraiture · Worldwide Stories · </span><span class="px-10">Wedding Photography · Wedding Films · Family · Maternity · Portraiture · Worldwide Stories · </span></div></section>
+<footer class="bg-[#141414] text-white">
+<div class="mx-auto grid max-w-[1500px] gap-12 px-6 py-16 sm:px-10 lg:grid-cols-12 lg:px-12 lg:py-24">
+<div class="lg:col-span-4"><a class="logo-mark text-xl" href="index.html">AXIOO</a><p class="mt-7 max-w-sm font-display text-3xl leading-tight text-white/85">Stories of love, life, and all the beautiful spaces in between.</p></div>
+<div class="lg:col-span-2"><p class="text-[10px] uppercase tracking-[.25em] text-white/40">Explore</p><div class="mt-5 space-y-3 text-sm text-white/75"><a class="block hover:text-white" href="photography.html">Photography</a><a class="block hover:text-white" href="videography.html">Videography</a><a class="block hover:text-white" href="journal.html">Journal</a><a class="block hover:text-white" href="about.html">About</a><a class="block hover:text-white" href="faq.html">F.A.Q</a></div></div>
+<div class="lg:col-span-3"><p class="text-[10px] uppercase tracking-[.25em] text-white/40">Get in touch</p><div class="mt-5 space-y-3 text-sm text-white/75"><p>By appointment only</p><a class="block hover:text-white" href="mailto:hello@example.com">hello@example.com</a><a class="block hover:text-white" href="contact.html">Wedding enquiries</a><a class="block hover:text-white" href="contact.html">Baby &amp; family enquiries</a></div></div>
+<div class="lg:col-span-3"><p class="text-[10px] uppercase tracking-[.25em] text-white/40">Studio note</p><p class="mt-5 text-sm leading-7 text-white/60">This front-end project is an independent Tailwind study inspired by the editorial structure of the referenced website. Replace the demo copy and photography before production use.</p><div class="mt-6 flex gap-4 text-white/70"><a aria-label="Instagram" href="#"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg></a><a aria-label="Facebook" href="#"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.6.4-1 1-1Z"></path></svg></a><a aria-label="YouTube" href="#"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 8s0-3-3-3H6C3 5 3 8 3 8v8s0 3 3 3h12c3 0 3-3 3-3V8Z"></path><path d="m10 9 5 3-5 3V9Z"></path></svg></a></div></div>
+</div>
+<div class="border-t border-white/10 px-6 py-5 text-[9px] uppercase tracking-[.2em] text-white/35 sm:px-10 lg:px-12"><div class="mx-auto flex max-w-[1500px] flex-col gap-3 sm:flex-row sm:justify-between"><span>© <span data-year="">2026</span> AXIOO concept project</span><span>Tailwind CSS · Vanilla JavaScript</span></div></div>
+</footer>
+<div class="lightbox fixed inset-0 z-[90] flex items-center justify-center bg-black/95 p-4" id="lightbox"><button class="absolute right-5 top-5 p-3 text-white" data-lightbox-close=""><svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button aria-label="Close lightbox" class="absolute inset-0" data-lightbox-close=""></button><img alt="Gallery preview" class="relative z-10 max-h-[88vh] max-w-[92vw] object-contain" id="lightboxImage"/></div>
+<div class="toast fixed bottom-5 right-5 z-[100] bg-black px-5 py-4 text-sm text-white card-shadow" id="toast"><span>Done.</span></div>
+<script src="assets/js/site-header.js"></script><script src="assets/js/app.js"></script>
+</body></html>
