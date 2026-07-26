@@ -87,7 +87,7 @@ class PhotographyCrudTest extends TestCase
         ]);
 
         $this->actingAs($user)
-            ->get(route('admin.photographies.builder', $photo->id))
+            ->get(route('admin.photographies.builder', $photo))
             ->assertStatus(200);
     }
 

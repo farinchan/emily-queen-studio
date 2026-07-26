@@ -116,7 +116,10 @@
                                             @endif
                                         </div>
                                         <div>
-                                            <span class="font-medium">{{ $item->title }}</span>
+                                            @if ($item->label)
+                                                <span class="badge badge--soft badge--primary text-xs mb-1">{{ $item->label }}</span>
+                                            @endif
+                                            <div class="font-medium">{{ $item->title }}</div>
                                             @if ($item->slug)
                                                 <div class="text-xs font-mono text-muted-foreground">/{{ $item->slug }}</div>
                                             @endif
@@ -266,6 +269,15 @@
                         <div wire:loading wire:target="image" class="text-xs text-primary mt-1">
                             Mengupload gambar...
                         </div>
+                    </div>
+
+                    <div class="field mb-4">
+                        <label class="field__label">Label / Tagline</label>
+                        <input type="text" class="input" wire:model="label" placeholder="e.g. Prewedding · Cappadocia" />
+                        <div class="field__description">Label ringkas yang muncul di atas judul (misal: Prewedding · Bali).</div>
+                        @error('label')
+                            <div class="field__error">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="field mb-4">

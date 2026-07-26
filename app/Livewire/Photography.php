@@ -20,6 +20,7 @@ class Photography extends Component
 
     public $image;
     public ?string $existingImage = null;
+    public string $label = '';
     public string $title = '';
     public string $slug = '';
     public string $subtitle = '';
@@ -37,6 +38,7 @@ class Photography extends Component
     {
         return [
             'image' => $this->photographyId ? 'nullable|image|max:8192' : 'required|image|max:8192',
+            'label' => 'nullable|string|max:255',
             'title' => 'required|string|max:255',
             'slug' => 'required|string|max:255|unique:photographies,slug,'.$this->photographyId,
             'subtitle' => 'nullable|string|max:255',
@@ -98,6 +100,7 @@ class Photography extends Component
         $photography = ModelsPhotography::findOrFail($photographyId);
         $this->image = null;
         $this->existingImage = $photography->image;
+        $this->label = $photography->label ?? '';
         $this->title = $photography->title ?? '';
         $this->slug = $photography->slug ?? Str::slug($photography->title ?? '');
         $this->subtitle = $photography->subtitle ?? '';
@@ -116,6 +119,7 @@ class Photography extends Component
         $this->photographyId = null;
         $this->image = null;
         $this->existingImage = null;
+        $this->label = '';
         $this->title = '';
         $this->slug = '';
         $this->subtitle = '';
@@ -151,6 +155,7 @@ class Photography extends Component
             ['id' => $this->photographyId],
             [
                 'image' => $imagePath,
+                'label' => $this->label,
                 'title' => $this->title,
                 'slug' => $this->slug ?: Str::slug($this->title),
                 'subtitle' => $this->subtitle,
@@ -196,6 +201,7 @@ class Photography extends Component
         if (!empty($this->search)) {
             $query->where(function ($q) {
                 $q->where('title', 'like', "%{$this->search}%")
+                  ->orWhere('label', 'like', "%{$this->search}%")
                   ->orWhere('slug', 'like', "%{$this->search}%")
                   ->orWhere('subtitle', 'like', "%{$this->search}%")
                   ->orWhere('description', 'like', "%{$this->search}%");
