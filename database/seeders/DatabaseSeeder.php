@@ -76,30 +76,35 @@ class DatabaseSeeder extends Seeder
             Photography::create([
                 'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
                 'title' => 'Elegant Wedding',
+                'slug' => 'elegant-wedding',
                 'subtitle' => 'Timeless vows, beautifully captured forever.',
             ]);
 
             Photography::create([
                 'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
                 'title' => 'Warm Family',
+                'slug' => 'warm-family',
                 'subtitle' => 'Cherished moments, laughter, and love.',
             ]);
 
             Photography::create([
                 'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
                 'title' => 'Graduation Photo',
+                'slug' => 'graduation-photo',
                 'subtitle' => 'Memories of graduation filled with spirit and pride.',
             ]);
 
             Photography::create([
                 'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
                 'title' => 'Joyful Milestone',
+                'slug' => 'joyful-milestone',
                 'subtitle' => 'Your achievement, framed with style.',
             ]);
 
             Photography::create([
                 'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
                 'title' => 'Office Group Photo',
+                'slug' => 'office-group-photo',
                 'subtitle' => 'A warm moment of teamwork and togetherness.',
             ]);
         }

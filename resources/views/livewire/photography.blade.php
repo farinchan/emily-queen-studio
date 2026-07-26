@@ -117,6 +117,9 @@
                                         </div>
                                         <div>
                                             <span class="font-medium">{{ $item->title }}</span>
+                                            @if ($item->slug)
+                                                <div class="text-xs font-mono text-muted-foreground">/{{ $item->slug }}</div>
+                                            @endif
                                             @if ($item->description)
                                                 <div class="text-xs text-muted-foreground truncate" style="max-width: 250px;">{{ $item->description }}</div>
                                             @endif
@@ -267,8 +270,17 @@
 
                     <div class="field mb-4">
                         <label class="field__label">Judul (Title) *</label>
-                        <input type="text" class="input" wire:model="title" placeholder="e.g. Elegant Wedding" />
+                        <input type="text" class="input" wire:model.live="title" placeholder="e.g. Elegant Wedding" />
                         @error('title')
+                            <div class="field__error">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="field mb-4">
+                        <label class="field__label">Slug (URL) *</label>
+                        <input type="text" class="input font-mono" wire:model="slug" placeholder="e.g. elegant-wedding" />
+                        <div class="field__description">Otomatis terisi dari Judul, dapat disesuaikan jika perlu.</div>
+                        @error('slug')
                             <div class="field__error">{{ $message }}</div>
                         @enderror
                     </div>

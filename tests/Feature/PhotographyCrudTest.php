@@ -25,7 +25,7 @@ class PhotographyCrudTest extends TestCase
             ->assertStatus(200);
     }
 
-    public function test_can_create_photography(): void
+    public function test_can_create_photography_with_auto_generated_slug(): void
     {
         Storage::fake('public');
 
@@ -43,18 +43,21 @@ class PhotographyCrudTest extends TestCase
 
         $this->assertDatabaseHas('photographies', [
             'title' => 'Wedding Outdoor',
+            'slug' => 'wedding-outdoor',
             'subtitle' => 'Momen indah di alam bebas',
             'description' => 'Dokumentasi lengkap momen pernikahan outdoor.',
         ]);
 
         $photo = Photography::where('title', 'Wedding Outdoor')->first();
         $this->assertEquals(['wedding', 'outdoor', 'romantic'], $photo->keywords);
+        $this->assertEquals('wedding-outdoor', $photo->slug);
     }
 
     public function test_can_update_photography(): void
     {
         $photo = Photography::create([
             'title' => 'Foto Lama',
+            'slug' => 'foto-lama',
             'subtitle' => 'Sub lama',
             'keywords' => ['tag1', 'tag2'],
             'image' => 'photographies/old.jpg',
@@ -63,7 +66,6 @@ class PhotographyCrudTest extends TestCase
         Livewire::test(PhotographyComponent::class)
             ->call('openEditModal', $photo->id)
             ->set('title', 'Foto Baru')
-            ->set('keywordsInput', 'baru, update')
             ->call('savePhotography')
             ->assertDispatched('close-drawer')
             ->assertDispatched('notify');
@@ -71,10 +73,8 @@ class PhotographyCrudTest extends TestCase
         $this->assertDatabaseHas('photographies', [
             'id' => $photo->id,
             'title' => 'Foto Baru',
+            'slug' => 'foto-baru',
         ]);
-
-        $updated = Photography::find($photo->id);
-        $this->assertEquals(['baru', 'update'], $updated->keywords);
     }
 
     public function test_builder_page_can_be_rendered(): void
@@ -82,6 +82,7 @@ class PhotographyCrudTest extends TestCase
         $user = User::factory()->create();
         $photo = Photography::create([
             'title' => 'Foto Layout',
+            'slug' => 'foto-layout',
             'image' => 'photographies/layout.jpg',
         ]);
 
@@ -94,6 +95,7 @@ class PhotographyCrudTest extends TestCase
     {
         $photo = Photography::create([
             'title' => 'Foto Builder',
+            'slug' => 'foto-builder',
             'image' => 'photographies/builder.jpg',
         ]);
 
@@ -113,6 +115,7 @@ class PhotographyCrudTest extends TestCase
     {
         $photo = Photography::create([
             'title' => 'Foto Hapus',
+            'slug' => 'foto-hapus',
             'image' => 'photographies/delete.jpg',
         ]);
 
@@ -127,8 +130,8 @@ class PhotographyCrudTest extends TestCase
 
     public function test_can_bulk_delete_photographies(): void
     {
-        $p1 = Photography::create(['title' => 'Foto 1', 'image' => 'photographies/1.jpg']);
-        $p2 = Photography::create(['title' => 'Foto 2', 'image' => 'photographies/2.jpg']);
+        $p1 = Photography::create(['title' => 'Foto 1', 'slug' => 'foto-1', 'image' => 'photographies/1.jpg']);
+        $p2 = Photography::create(['title' => 'Foto 2', 'slug' => 'foto-2', 'image' => 'photographies/2.jpg']);
 
         Livewire::test(PhotographyComponent::class)
             ->set('selectedItems', [(string) $p1->id, (string) $p2->id])

@@ -21,6 +21,7 @@ class Photography extends Component
     public $image;
     public ?string $existingImage = null;
     public string $title = '';
+    public string $slug = '';
     public string $subtitle = '';
     public string $description = '';
     public string $keywordsInput = '';
@@ -37,11 +38,17 @@ class Photography extends Component
         return [
             'image' => $this->photographyId ? 'nullable|image|max:8192' : 'required|image|max:8192',
             'title' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:photographies,slug,'.$this->photographyId,
             'subtitle' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'keywordsInput' => 'nullable|string',
             'content' => 'nullable|string',
         ];
+    }
+
+    public function updatedTitle(string $value): void
+    {
+        $this->slug = Str::slug($value);
     }
 
     public function updatedSearch(): void
@@ -92,6 +99,7 @@ class Photography extends Component
         $this->image = null;
         $this->existingImage = $photography->image;
         $this->title = $photography->title ?? '';
+        $this->slug = $photography->slug ?? Str::slug($photography->title ?? '');
         $this->subtitle = $photography->subtitle ?? '';
         $this->description = $photography->description ?? '';
         $this->keywordsInput = is_array($photography->keywords) ? implode(', ', $photography->keywords) : '';
@@ -109,6 +117,7 @@ class Photography extends Component
         $this->image = null;
         $this->existingImage = null;
         $this->title = '';
+        $this->slug = '';
         $this->subtitle = '';
         $this->description = '';
         $this->keywordsInput = '';
@@ -118,6 +127,10 @@ class Photography extends Component
 
     public function savePhotography(): void
     {
+        if (empty($this->slug) && !empty($this->title)) {
+            $this->slug = Str::slug($this->title);
+        }
+
         $this->validate();
 
         $isEdit = (bool) $this->photographyId;
@@ -139,6 +152,7 @@ class Photography extends Component
             [
                 'image' => $imagePath,
                 'title' => $this->title,
+                'slug' => $this->slug ?: Str::slug($this->title),
                 'subtitle' => $this->subtitle,
                 'description' => $this->description,
                 'keywords' => $keywords,
@@ -182,6 +196,7 @@ class Photography extends Component
         if (!empty($this->search)) {
             $query->where(function ($q) {
                 $q->where('title', 'like', "%{$this->search}%")
+                  ->orWhere('slug', 'like', "%{$this->search}%")
                   ->orWhere('subtitle', 'like', "%{$this->search}%")
                   ->orWhere('description', 'like', "%{$this->search}%");
             });

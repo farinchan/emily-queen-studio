@@ -95,7 +95,7 @@
                         label: '✨ Hero Section',
                         category: 'Page Sections',
                         content: `
-                            <section class="bg-[#f6f3ed] text-[#171717] py-20 px-6 sm:px-12 text-center border-b border-black/10">
+                            <section class="bg-white text-[#171717] py-20 px-6 sm:px-12 text-center border-b border-black/10">
                                 <span class="text-[10px] uppercase tracking-[.3em] text-[#171717]/60 mb-4 block">Portfolio Collection</span>
                                 <h1 class="font-display text-5xl sm:text-7xl font-normal leading-tight mb-6">${@json($photography->title)}</h1>
                                 <p class="max-w-2xl mx-auto text-sm sm:text-base text-[#171717]/70 font-light leading-relaxed mb-8">${@json($photography->subtitle ?: 'Capture timeless vows and memorable moments forever.')}</p>
@@ -108,7 +108,7 @@
                         label: '📖 Story Narration',
                         category: 'Page Sections',
                         content: `
-                            <section class="bg-[#f6f3ed] text-[#171717] py-16 px-6 max-w-4xl mx-auto">
+                            <section class="bg-white text-[#171717] py-16 px-6 max-w-4xl mx-auto">
                                 <h2 class="font-display text-3xl sm:text-4xl text-center mb-6">Sebuah Kisah Tentang Cinta & Keindahan</h2>
                                 <p class="text-base text-[#171717]/80 leading-relaxed mb-6 font-light">Setiap momen memiliki jiwa dan emosi tersendiri. Melalui lensa kami, kami mengabadikan detik-detik berharga ini menjadi karya seni visual yang tak lekang oleh waktu.</p>
                                 <blockquote class="border-l-2 border-[#171717]/30 pl-6 py-2 my-8 font-display italic text-2xl text-[#171717]/90">"Foto adalah puisi visual yang menangkap keabadian dalam selintas detik."</blockquote>

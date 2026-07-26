@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateHeader = () => {
     if (!header) return;
     const useSolid = solidHeader || window.scrollY > 60;
-    header.classList.toggle('bg-[#f6f3ed]/95', useSolid);
-    header.classList.toggle('backdrop-blur-md', useSolid);
+    header.classList.toggle('bg-white', useSolid);
     header.classList.toggle('text-[#171717]', useSolid);
     header.classList.toggle('border-black/10', useSolid);
     header.classList.toggle('shadow-sm', useSolid);

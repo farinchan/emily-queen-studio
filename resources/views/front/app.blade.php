@@ -22,7 +22,7 @@
     <link href="{{ asset('assets/favicon.svg') }}" rel="icon" type="image/svg+xml" />
 </head>
 
-<body class="bg-[#f6f3ed] text-[#171717] antialiased">
+<body class="bg-white text-[#171717] antialiased">
 
     @include('front.partials.header')
     @include('front.partials.search-overlay')
@@ -89,8 +89,7 @@
             // Header style on scroll
             const updateHeader = () => {
                 const scrolled = window.scrollY > 60;
-                header.classList.toggle('bg-[#f6f3ed]/95', scrolled);
-                header.classList.toggle('backdrop-blur-md', scrolled);
+                header.classList.toggle('bg-white', scrolled);
                 header.classList.toggle('text-[#171717]', scrolled);
                 header.classList.toggle('border-black/10', scrolled);
                 header.classList.toggle('shadow-sm', scrolled);

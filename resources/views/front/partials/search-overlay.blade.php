@@ -1,6 +1,6 @@
     <!-- Search Overlay -->
     <div aria-hidden="true"
-        class="fixed inset-0 z-[70] invisible flex items-center bg-[#f6f3ed]/98 px-6 opacity-0 backdrop-blur transition-all duration-500"
+        class="fixed inset-0 z-[70] invisible flex items-center bg-white px-6 opacity-0 transition-all duration-500"
         id="searchOverlay">
         <button aria-label="Close search"
             class="absolute right-6 top-7 grid h-12 w-12 place-items-center border border-black/20 sm:right-10 sm:top-10"
