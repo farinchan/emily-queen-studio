@@ -98,35 +98,17 @@
                         </a>
                     </li>
 
-                    <li class="sidebar__item" data-state="closed">
-                        <a class="sidebar__button" href="/meridian/reports.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill="currentColor"
-                                    d="M3.293 9.293C3 9.586 3 10.057 3 11v6c0 .943 0 1.414.293 1.707S4.057 19 5 19s1.414 0 1.707-.293S7 17.943 7 17v-6c0-.943 0-1.414-.293-1.707S5.943 9 5 9s-1.414 0-1.707.293" />
-                                <path fill="currentColor"
-                                    d="M17.293 2.293C17 2.586 17 3.057 17 4v13c0 .943 0 1.414.293 1.707S18.057 19 19 19s1.414 0 1.707-.293S21 17.943 21 17V4c0-.943 0-1.414-.293-1.707S19.943 2 19 2s-1.414 0-1.707.293"
-                                    opacity=".4" />
-                                <path fill="currentColor"
-                                    d="M10 7c0-.943 0-1.414.293-1.707S11.057 5 12 5s1.414 0 1.707.293S14 6.057 14 7v10c0 .943 0 1.414-.293 1.707S12.943 19 12 19s-1.414 0-1.707-.293S10 17.943 10 17z"
-                                    opacity=".7" />
-                                <path fill="currentColor" d="M3 21.25a.75.75 0 0 0 0 1.5h18a.75.75 0 0 0 0-1.5z" />
-                            </svg><span>Reports</span>
+                    <li class="sidebar__item">
+                        <a class="sidebar__button" href="{{ route('admin.settings.index') }}"
+                            @if (Route::is('admin.settings.index')) aria-current="page" @endif>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 15a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z" />
+                                    <path stroke-linecap="round" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83a2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33a1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2a2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0a2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2a2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83a2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0a2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2a2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+                                </g>
+                            </svg><span>Pengaturan</span>
                         </a>
-                        <button type="button" class="sidebar__item-action" data-stisla-sidebar-submenu-toggle
-                            aria-expanded="false" aria-controls="nav-reports" aria-label="Toggle Reports submenu">
-                            <span class="sidebar__caret"></span>
-                        </button>
-                        <div class="sidebar__submenu" id="nav-reports">
-                            <ul class="sidebar__list">
-                                <li class="sidebar__item">
-                                    <a class="sidebar__button" href="/meridian/reports.html"><span>Sales</span></a>
-                                </li>
-                                <li class="sidebar__item">
-                                    <a class="sidebar__button" href="/meridian/reports.html"><span>Traffic</span></a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
 
                 </ul>
@@ -169,7 +151,7 @@
         <div class="copyright">
             <hr class="separator my-3" style="--separator-color: var(--sidebar-submenu-border-color)" />
             <p class="text-xs text-muted-foreground" style="--link-color: var(--color-foreground)">
-                Designed by <a href="https://nauv.al" class="link" target="_blank">Fajri Rinaldi Chan</a>
+                Dev by <a href="https://fajri.gariskode.com" class="link" target="_blank">Fajri Rinaldi Chan</a>
             </p>
         </div>
     </footer>

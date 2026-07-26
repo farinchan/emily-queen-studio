@@ -9,4 +9,18 @@ class Setting extends Model
     protected $guarded = [
         'id', 'created_at', 'updated_at',
     ];
+
+    public static function get(string $key, ?string $default = null): ?string
+    {
+        $setting = static::where('key', $key)->first();
+        return $setting ? $setting->value : $default;
+    }
+
+    public static function set(string $key, ?string $value): void
+    {
+        static::updateOrCreate(
+            ['key' => $key],
+            ['value' => $value ?? '']
+        );
+    }
 }

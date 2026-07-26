@@ -22,7 +22,7 @@
                 </div>
                 <div class="ms-auto">
                     <div class="flex gap-1">
-                        <div class="relative">
+                        {{-- <div class="relative">
                             <button type="button" class="button button--ghost button--neutral button--icon-only"
                                 data-stisla-popover-trigger="messageNotif" aria-haspopup="dialog"
                                 aria-expanded="false" aria-controls="messageNotif" aria-label="Messages">
@@ -91,9 +91,9 @@
                                     </svg>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <button type="button" class="button button--ghost button--neutral button--icon-only"
+                        {{-- <button type="button" class="button button--ghost button--neutral button--icon-only"
                             data-stisla-popover-trigger="topbarNotif" aria-haspopup="dialog" aria-expanded="false"
                             aria-controls="topbarNotif" aria-label="Notifications">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -148,7 +148,7 @@
                                     </svg>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <button type="button" class="button button--ghost button--neutral button--icon-only"
                             data-theme-toggle aria-label="Toggle theme">

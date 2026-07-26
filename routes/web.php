@@ -31,4 +31,6 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
         Route::get('/', App\Livewire\Photography::class)->name('index');
         Route::get('/{photography}/builder', App\Livewire\PhotographyBuilder::class)->name('builder');
     });
+
+    Route::get('/settings', App\Livewire\Setting::class)->name('settings.index');
 });
