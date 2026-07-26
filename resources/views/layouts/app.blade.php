@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8" />
@@ -16,17 +16,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-    <title>Blank page · Meridian</title>
-
     <link rel="stylesheet" href=" {{ asset('back-assets/css/style.css') }} " />
+
+    <title>{{ $title ?? config('app.name') }}</title>
+
+    @livewireStyles
 </head>
 
 <body>
+
     <div class="app-shell" data-stisla-app-shell data-stisla-app-shell-auto-collapse="true">
-        @include('admin.partials.sidebar')
+        @include('partials.sidebar')
 
         <main class="app-shell__main">
-            @include('admin.partials.header')
+            @include('partials.header')
 
             <div class="page content">
                 <div class="content__container">
@@ -44,18 +47,20 @@
                             </p>
                         </div>
                         <div class="page__action">
-                            @yield('page-action')
+                            {{ $action ?? '' }}
                         </div>
                     </header>
 
                     <div class="page__body">
-                        @yield('content')
+                        {{ $slot }}
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
+
+    @livewireScripts
     <!-- Third-party (CDN in both dev and prod). Loads before main.js so charts.js sees window.ApexCharts. -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts@3"></script>
 
@@ -65,7 +70,6 @@
     <script src=" {{ asset('back-assets/js/charts.js') }} "></script>
     <script src=" {{ asset('back-assets/js/order-form.js') }} "></script>
     <script src=" {{ asset('back-assets/js/table-select.js') }} "></script>
-
 
 </body>
 
