@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Livewire\Photography as PhotographyComponent;
 use App\Livewire\PhotographyBuilder;
 use App\Models\Photography;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +18,10 @@ class PhotographyCrudTest extends TestCase
 
     public function test_photography_page_can_be_rendered(): void
     {
-        $this->get(route('admin.photographies.index'))
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->get(route('admin.photographies.index'))
             ->assertStatus(200);
     }
 
@@ -75,12 +79,14 @@ class PhotographyCrudTest extends TestCase
 
     public function test_builder_page_can_be_rendered(): void
     {
+        $user = User::factory()->create();
         $photo = Photography::create([
             'title' => 'Foto Layout',
             'image' => 'photographies/layout.jpg',
         ]);
 
-        $this->get(route('admin.photographies.builder', $photo->id))
+        $this->actingAs($user)
+            ->get(route('admin.photographies.builder', $photo->id))
             ->assertStatus(200);
     }
 

@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Livewire\Banner as BannerComponent;
 use App\Models\Banner;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,10 @@ class BannerCrudTest extends TestCase
 
     public function test_banner_page_can_be_rendered(): void
     {
-        $this->get(route('admin.banners.index'))
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->get(route('admin.banners.index'))
             ->assertStatus(200);
     }
 

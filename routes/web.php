@@ -1,11 +1,23 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('home');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+// Auth Routes (Guest)
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+});
+
+// Logout Route (Authenticated)
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+
+// Protected Admin Routes
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', App\Livewire\Dashboard::class)->name('dashboard');
+    Route::get('/profile', App\Livewire\Profile::class)->name('profile');
 
     Route::prefix('users')->name('users.')->group(function () {
         Route::get('/', App\Livewire\User::class)->name('index');

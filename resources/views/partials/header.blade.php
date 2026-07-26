@@ -164,12 +164,12 @@
                                 class="button button--ghost button--neutral flex items-center gap-2"
                                 data-stisla-menu-trigger="topbarUser" aria-haspopup="menu" aria-expanded="false"
                                 aria-controls="topbarUser">
-                                <span class="hidden sm:inline font-medium">Steven Gerrard</span>
+                                <span class="hidden sm:inline font-medium">{{ auth()->user()->name ?? 'Admin' }}</span>
                                 <span class="avatar avatar--sm avatar--circle" data-stisla-avatar>
-                                    <img class="avatar__image"
-                                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=80&h=80&q=80"
-                                        alt="" />
-                                    <span class="avatar__fallback">SG</span>
+                                    @if(auth()->user()?->image)
+                                        <img class="avatar__image" src="{{ asset('storage/' . auth()->user()->image) }}" alt="{{ auth()->user()->name }}" />
+                                    @endif
+                                    <span class="avatar__fallback">{{ strtoupper(substr(auth()->user()->name ?? 'AD', 0, 2)) }}</span>
                                 </span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     viewBox="0 0 24 24" aria-hidden="true">
@@ -180,8 +180,8 @@
                             <div class="menu__popup w-48" id="topbarUser" data-stisla-menu role="menu"
                                 data-state="closed">
                                 <div class="menu__group" role="group" aria-labelledby="topbarUserHead">
-                                    <h3 class="menu__group-label" id="topbarUserHead">Mateo Alvarez</h3>
-                                    <a href="/meridian/settings.html" class="menu__item" role="menuitem"><svg
+                                    <h3 class="menu__group-label" id="topbarUserHead">{{ auth()->user()->name ?? 'Admin' }}</h3>
+                                    <a href="{{ route('admin.profile') }}" class="menu__item" role="menuitem"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                             viewBox="0 0 24 24" aria-hidden="true">
                                             <g fill="none" stroke="currentColor" stroke-width="1.5">
@@ -190,18 +190,12 @@
                                                     d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
                                             </g>
                                         </svg>Profile</a>
-                                    <a href="/meridian/settings.html" class="menu__item" role="menuitem"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                            viewBox="0 0 24 24" aria-hidden="true">
-                                            <g fill="none" stroke="currentColor" stroke-width="1.5">
-                                                <circle cx="12" cy="12" r="3" />
-                                                <path
-                                                    d="M13.765 2.152C13.398 2 12.932 2 12 2s-1.398 0-1.765.152a2 2 0 0 0-1.083 1.083c-.092.223-.129.484-.143.863a1.62 1.62 0 0 1-.79 1.353a1.62 1.62 0 0 1-1.567.008c-.336-.178-.579-.276-.82-.308a2 2 0 0 0-1.478.396C4.04 5.79 3.806 6.193 3.34 7s-.7 1.21-.751 1.605a2 2 0 0 0 .396 1.479c.148.192.355.353.676.555c.473.297.777.803.777 1.361s-.304 1.064-.777 1.36c-.321.203-.529.364-.676.556a2 2 0 0 0-.396 1.479c.052.394.285.798.75 1.605c.467.807.7 1.21 1.015 1.453a2 2 0 0 0 1.479.396c.24-.032.483-.13.819-.308a1.62 1.62 0 0 1 1.567.008c.483.28.77.795.79 1.353c.014.38.05.64.143.863a2 2 0 0 0 1.083 1.083C10.602 22 11.068 22 12 22s1.398 0 1.765-.152a2 2 0 0 0 1.083-1.083c.092-.223.129-.483.143-.863c.02-.558.307-1.074.79-1.353a1.62 1.62 0 0 1 1.567-.008c.336.178.579.276.819.308a2 2 0 0 0 1.479-.396c.315-.242.548-.646 1.014-1.453s.7-1.21.751-1.605a2 2 0 0 0-.396-1.479c-.148-.192-.355-.353-.676-.555A1.62 1.62 0 0 1 19.562 12c0-.558.304-1.064.777-1.36c.321-.203.529-.364.676-.556a2 2 0 0 0 .396-1.479c-.052-.394-.285-.798-.75-1.605c-.467-.807-.7-1.21-1.015-1.453a2 2 0 0 0-1.479-.396c-.24.032-.483.13-.82.308a1.62 1.62 0 0 1-1.566-.008a1.62 1.62 0 0 1-.79-1.353c-.014-.38-.05-.64-.143-.863a2 2 0 0 0-1.083-1.083Z" />
-                                            </g>
-                                        </svg>Settings</a>
                                 </div>
                                 <hr class="menu__separator" role="separator" />
-                                <a href="/meridian/login.html" class="menu__item" role="menuitem"><svg
+                                <form action="{{ route('logout') }}" method="POST" id="topbar-logout-form" class="hidden">
+                                    @csrf
+                                </form>
+                                <a href="#" onclick="event.preventDefault(); document.getElementById('topbar-logout-form').submit();" class="menu__item" role="menuitem"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                         viewBox="0 0 24 24" aria-hidden="true">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round"

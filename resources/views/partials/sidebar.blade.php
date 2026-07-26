@@ -137,7 +137,7 @@
     <footer class="sidebar__footer">
         <ul class="sidebar__list">
             <li class="sidebar__item">
-                <a class="sidebar__button" href="/meridian/settings.html">
+                <a class="sidebar__button" href="{{ route('admin.profile') }}" @if(Route::is('admin.profile')) aria-current="page" @endif>
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
                         aria-hidden="true">
                         <path fill="currentColor"
@@ -150,7 +150,10 @@
                 </a>
             </li>
             <li class="sidebar__item">
-                <a class="sidebar__button" href="/meridian/login.html">
+                <form action="{{ route('logout') }}" method="POST" id="sidebar-logout-form" class="hidden">
+                    @csrf
+                </form>
+                <a class="sidebar__button" href="#" onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
                         aria-hidden="true">
                         <path fill="currentColor"

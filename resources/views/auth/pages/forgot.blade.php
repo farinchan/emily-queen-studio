@@ -1,0 +1,50 @@
+ <section class="auth__panel">
+      <button type="button" class="button button--ghost button--neutral button--icon-only auth__toggle"
+        data-theme-toggle aria-label="Toggle theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor"
+            d="m21.067 11.857l-.642-.388zm-8.924-8.924l-.388-.642zM21.25 12A9.25 9.25 0 0 1 12 21.25v1.5c5.937 0 10.75-4.813 10.75-10.75zM12 21.25A9.25 9.25 0 0 1 2.75 12h-1.5c0 5.937 4.813 10.75 10.75 10.75zM2.75 12A9.25 9.25 0 0 1 12 2.75v-1.5C6.063 1.25 1.25 6.063 1.25 12zm12.75 2.25A5.75 5.75 0 0 1 9.75 8.5h-1.5a7.25 7.25 0 0 0 7.25 7.25zm4.925-2.781A5.75 5.75 0 0 1 15.5 14.25v1.5a7.25 7.25 0 0 0 6.21-3.505zM9.75 8.5a5.75 5.75 0 0 1 2.781-4.925l-.776-1.284A7.25 7.25 0 0 0 8.25 8.5zM12 2.75a.38.38 0 0 1-.268-.118a.3.3 0 0 1-.082-.155c-.004-.031-.002-.121.105-.186l.776 1.284c.503-.304.665-.861.606-1.299c-.062-.455-.42-1.026-1.137-1.026zm9.71 9.495c-.066.107-.156.109-.187.105a.3.3 0 0 1-.155-.082a.38.38 0 0 1-.118-.268h1.5c0-.717-.571-1.075-1.026-1.137c-.438-.059-.995.103-1.299.606z" />
+        </svg>
+      </button>
+      <div class="auth__form">
+        <div>
+          <h1 class="text-2xl">Reset password</h1>
+          <p class="text-muted-foreground mt-1">Enter your email and we'll send a reset link.</p>
+        </div>
+
+        <form class="flex flex-col gap-4">
+          <div class="field">
+            <label for="forgotEmail" class="field__label">Email</label>
+            <div class="input-group input-group--lg">
+              <span class="input-group__text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                  viewBox="0 0 24 24" aria-hidden="true">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                      d="M2 12c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12s0 5.657-1.172 6.828S17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12Z" />
+                    <path stroke-linecap="round"
+                      d="m6 8l2.159 1.8c1.837 1.53 2.755 2.295 3.841 2.295s2.005-.765 3.841-2.296L18 8" />
+                  </g>
+                </svg></span>
+              <input type="email" class="input" id="forgotEmail" placeholder="you@meridian.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <button type="button" class="button button--primary button--block button--lg">
+            Send reset link
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M4 12h16m0 0l-6-6m6 6l-6 6" />
+            </svg>
+          </button>
+        </form>
+
+        <p class="text-center">
+          <a href="/meridian/login.html" class="button button--ghost button--neutral button--sm"><svg
+              xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M20 12H4m0 0l6-6m-6 6l6 6" />
+            </svg>
+            Back to sign in</a>
+        </p>
+      </div>
+    </section>
