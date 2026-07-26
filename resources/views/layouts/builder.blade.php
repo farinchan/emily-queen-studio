@@ -22,6 +22,8 @@
     <!-- GrapesJS Core Assets -->
     <link rel="stylesheet" href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" />
     <script src="https://unpkg.com/grapesjs"></script>
+    <script src="https://unpkg.com/grapesjs-preset-newsletter"></script>
+
 
     @livewireStyles
     <style>

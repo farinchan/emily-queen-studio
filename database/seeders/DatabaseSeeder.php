@@ -78,6 +78,8 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Elegant Wedding',
                 'slug' => 'elegant-wedding',
                 'subtitle' => 'Timeless vows, beautifully captured forever.',
+                'description' => 'A collection of elegant wedding moments, capturing the essence of love and celebration.',
+                'keywords' => ['wedding', 'elegant', 'romantic'],
             ]);
 
             Photography::create([
@@ -85,6 +87,8 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Warm Family',
                 'slug' => 'warm-family',
                 'subtitle' => 'Cherished moments, laughter, and love.',
+                'description' => 'A collection of warm family moments, capturing the essence of togetherness and joy.',
+                'keywords' => ['family', 'warm', 'joyful'],
             ]);
 
             Photography::create([
@@ -92,6 +96,8 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Graduation Photo',
                 'slug' => 'graduation-photo',
                 'subtitle' => 'Memories of graduation filled with spirit and pride.',
+                'description' => 'A collection of graduation moments, capturing the essence of achievement and pride.',
+                'keywords' => ['graduation', 'celebration', 'pride'],
             ]);
 
             Photography::create([
@@ -99,6 +105,8 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Joyful Milestone',
                 'slug' => 'joyful-milestone',
                 'subtitle' => 'Your achievement, framed with style.',
+                'description' => 'A collection of joyful milestone moments, capturing the essence of celebration and success.',
+                'keywords' => ['milestone', 'celebration', 'joyful'],
             ]);
 
             Photography::create([
@@ -106,6 +114,8 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Office Group Photo',
                 'slug' => 'office-group-photo',
                 'subtitle' => 'A warm moment of teamwork and togetherness.',
+                'description' => 'A collection of office group moments, capturing the essence of collaboration and camaraderie.',
+                'keywords' => ['office', 'team', 'collaboration'],
             ]);
         }
 
