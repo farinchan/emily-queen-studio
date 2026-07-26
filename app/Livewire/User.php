@@ -5,13 +5,14 @@ namespace App\Livewire;
 use App\Models\User as ModelsUser;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 use Illuminate\Support\Str;
 
 #[Title('Users')]
 class User extends Component
 {
-    use WithPagination;
+    use WithPagination, WithFileUploads;
 
     public ?int $userId = null;
 
@@ -20,14 +21,19 @@ class User extends Component
     public string $filterStatus = 'all'; // all, active, inactive
 
     public $image;
+    public ?string $existingImage = null;
     public string $name = '';
     public string $email = '';
     public string $password = '';
     public string $position = '';
     public string $about = '';
     public string $instagram = '';
+    public ?int $order = null;
     public bool $is_show = true;
-    public bool $showDrawer = false;
+
+    // Bulk selection
+    public array $selectedUsers = [];
+    public bool $selectAll = false;
 
     protected $paginationTheme = 'tailwind';
 
@@ -41,6 +47,7 @@ class User extends Component
             'position' => 'nullable|string|max:255',
             'about' => 'nullable|string',
             'instagram' => 'nullable|string|max:255',
+            'order' => 'nullable|integer|min:0',
             'is_show' => 'boolean',
         ];
     }
@@ -48,11 +55,42 @@ class User extends Component
     public function updatedSearch(): void
     {
         $this->resetPage();
+        $this->resetSelection();
     }
 
     public function updatedFilterStatus(): void
     {
         $this->resetPage();
+        $this->resetSelection();
+    }
+
+    public function updatedSelectAll(): void
+    {
+        if ($this->selectAll) {
+            $this->selectedUsers = $this->getFilteredUsers()
+                ->pluck('id')
+                ->map(fn ($id) => (string) $id)
+                ->toArray();
+        } else {
+            $this->selectedUsers = [];
+        }
+    }
+
+    public function updatedSelectedUsers(): void
+    {
+        $currentPageIds = $this->getFilteredUsers()
+            ->pluck('id')
+            ->map(fn ($id) => (string) $id)
+            ->toArray();
+
+        $this->selectAll = !empty($currentPageIds)
+            && empty(array_diff($currentPageIds, $this->selectedUsers));
+    }
+
+    private function resetSelection(): void
+    {
+        $this->selectedUsers = [];
+        $this->selectAll = false;
     }
 
     public function openCreateModal(): void
@@ -62,14 +100,17 @@ class User extends Component
 
     public function openEditModal(int $userId): void
     {
+        $this->resetValidation();
         $this->userId = $userId;
         $user = ModelsUser::findOrFail($userId);
-        $this->image = $user->image;
+        $this->image = null;
+        $this->existingImage = $user->image;
         $this->name = $user->name;
         $this->email = $user->email;
-        $this->position = $user->position;
-        $this->about = $user->about;
-        $this->instagram = $user->instagram;
+        $this->position = $user->position ?? '';
+        $this->about = $user->about ?? '';
+        $this->instagram = $user->instagram ?? '';
+        $this->order = $user->order;
         $this->is_show = (bool) $user->is_show;
     }
 
@@ -82,12 +123,14 @@ class User extends Component
     {
         $this->userId = null;
         $this->image = null;
+        $this->existingImage = null;
         $this->name = '';
         $this->email = '';
         $this->password = '';
         $this->position = '';
         $this->about = '';
         $this->instagram = '';
+        $this->order = null;
         $this->is_show = true;
         $this->resetValidation();
     }
@@ -96,11 +139,14 @@ class User extends Component
     {
         $this->validate();
 
+        $isEdit = (bool) $this->userId;
         $user = ModelsUser::find($this->userId);
 
         $imagePath = $user?->image;
         if ($this->image && is_object($this->image)) {
-            $imagePath = $this->image->storeAs('public/images', Str::random(40).'.'.$this->image->getClientOriginalExtension());
+            $filename = Str::random(40).'.'.$this->image->getClientOriginalExtension();
+            $this->image->storeAs('users', $filename, 'public');
+            $imagePath = 'users/'.$filename;
         }
 
         ModelsUser::updateOrCreate(
@@ -113,16 +159,38 @@ class User extends Component
                 'position' => $this->position,
                 'about' => $this->about,
                 'instagram' => $this->instagram,
+                'order' => $this->order,
                 'is_show' => $this->is_show,
             ]
         );
 
         $this->closeModal();
+        $this->dispatch('close-drawer');
+        $this->dispatch(
+            'notify',
+            message: $isEdit ? 'User berhasil diperbarui.' : 'User berhasil ditambahkan.',
+        );
     }
 
     public function deleteUser(int $userId): void
     {
         ModelsUser::destroy($userId);
+        $this->selectedUsers = array_values(
+            array_diff($this->selectedUsers, [(string) $userId])
+        );
+        $this->dispatch('notify', message: 'User berhasil dihapus.');
+    }
+
+    public function deleteSelected(): void
+    {
+        if (empty($this->selectedUsers)) {
+            return;
+        }
+
+        $count = count($this->selectedUsers);
+        ModelsUser::whereIn('id', $this->selectedUsers)->delete();
+        $this->resetSelection();
+        $this->dispatch('notify', message: $count.' user berhasil dihapus.');
     }
 
     public function toggleShow(int $userId): void

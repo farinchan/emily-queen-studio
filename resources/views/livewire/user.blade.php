@@ -23,8 +23,23 @@
 </x-slot:action>
 
 <div>
+    {{-- Toast Notification Container (vanilla JS) --}}
+    <div id="livewire-toast"
+        style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;min-width:320px;opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease;pointer-events:none;">
+        <div class="alert alert--success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.5 12.5l2 2l5-5" />
+                </g>
+            </svg>
+            <span id="livewire-toast-message"></span>
+        </div>
+    </div>
+
     <section class="page__section">
-        <div class="card" data-table-select>
+        <div class="card">
+            {{-- Filter & Search Header --}}
             <div class="card__header flex-wrap">
                 <div class="toggle-group mt-4 md:mt-0" data-stisla-toggle-group role="radiogroup"
                     aria-label="Filter by status">
@@ -60,43 +75,47 @@
                 </div>
             </div>
 
-            <div class="card__header card__header--alt flex-wrap" data-bulkbar hidden>
-                <span><strong data-select-count>0</strong> selected</span>
-                <div class="flex flex-wrap items-center gap-2 ms-auto">
-                    <button type="button" class="button button--sm button--outline button--neutral">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
-                            aria-hidden="true">
-                            <g fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path
-                                    d="M2 12c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12s0 5.657-1.172 6.828S17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12Z" />
-                                <path stroke-linecap="round"
-                                    d="m6 8l2.159 1.8c1.837 1.53 2.755 2.295 3.841 2.295s2.005-.765 3.841-2.296L18 8" />
-                            </g>
-                        </svg>
-                        Email
-                    </button>
-                    <button type="button" class="button button--sm button--danger"
-                        data-stisla-dialog-trigger="deleteConfirm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
-                            aria-hidden="true">
-                            <g fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round"
-                                    d="M20.5 6h-17m15.333 2.5l-.46 6.9c-.177 2.654-.265 3.981-1.13 4.79s-2.196.81-4.856.81h-.774c-2.66 0-3.991 0-4.856-.81c-.865-.809-.954-2.136-1.13-4.79l-.46-6.9M9.5 11l.5 5m4.5-5l-.5 5" />
-                                <path
-                                    d="M6.5 6h.11a2 2 0 0 0 1.83-1.32l.034-.103l.097-.291c.083-.249.125-.373.18-.479a1.5 1.5 0 0 1 1.094-.788C9.962 3 10.093 3 10.355 3h3.29c.262 0 .393 0 .51.019a1.5 1.5 0 0 1 1.094.788c.055.106.097.23.18.479l.097.291A2 2 0 0 0 17.5 6" />
-                            </g>
-                        </svg>
-                        Delete
-                    </button>
+            {{-- Bulk Action Bar --}}
+            @if (count($selectedUsers) > 0)
+                <div class="card__header card__header--alt flex-wrap">
+                    <span><strong>{{ count($selectedUsers) }}</strong> selected</span>
+                    <div class="flex flex-wrap items-center gap-2 ms-auto">
+                        <button type="button" class="button button--sm button--outline button--neutral"
+                            wire:click="$set('selectedUsers', []); $set('selectAll', false)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            Batal
+                        </button>
+                        <button type="button" class="button button--sm button--danger"
+                            wire:click="deleteSelected"
+                            wire:confirm="Apakah Anda yakin ingin menghapus {{ count($selectedUsers) }} user yang dipilih?">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round"
+                                        d="M20.5 6h-17m15.333 2.5l-.46 6.9c-.177 2.654-.265 3.981-1.13 4.79s-2.196.81-4.856.81h-.774c-2.66 0-3.991 0-4.856-.81c-.865-.809-.954-2.136-1.13-4.79l-.46-6.9M9.5 11l.5 5m4.5-5l-.5 5" />
+                                    <path
+                                        d="M6.5 6h.11a2 2 0 0 0 1.83-1.32l.034-.103l.097-.291c.083-.249.125-.373.18-.479a1.5 1.5 0 0 1 1.094-.788C9.962 3 10.093 3 10.355 3h3.29c.262 0 .393 0 .51.019a1.5 1.5 0 0 1 1.094.788c.055.106.097.23.18.479l.097.291A2 2 0 0 0 17.5 6" />
+                                </g>
+                            </svg>
+                            Hapus ({{ count($selectedUsers) }})
+                        </button>
+                    </div>
                 </div>
-            </div>
+            @endif
 
+            {{-- Table --}}
             <div class="table-responsive">
                 <table class="table table--hover table--align-middle">
                     <thead class="table__head--alt">
                         <tr>
                             <th scope="col">
-                                <input class="checkbox" type="checkbox" data-select-all
+                                <input class="checkbox" type="checkbox"
+                                    wire:model.live="selectAll"
                                     aria-label="Select all users on this page" />
                             </th>
                             <th scope="col">Pengguna</th>
@@ -111,22 +130,16 @@
                         @forelse ($users as $user)
                             <tr wire:key="user-{{ $user->id }}">
                                 <td>
-                                    <input class="checkbox" type="checkbox" data-select-row
+                                    <input class="checkbox" type="checkbox"
+                                        wire:model.live="selectedUsers"
+                                        value="{{ $user->id }}"
                                         aria-label="Select {{ $user->name }}" />
                                 </td>
                                 <th scope="row">
                                     <div class="flex items-center gap-3">
                                         <span class="avatar avatar--sm avatar--circle" data-stisla-avatar>
                                             @if ($user->image)
-                                                @php
-                                                    $img = $user->image;
-                                                    $url = str_starts_with($img, 'http')
-                                                        ? $img
-                                                        : (str_starts_with($img, 'public/')
-                                                            ? asset('storage/' . str_replace('public/', '', $img))
-                                                            : asset('storage/' . $img));
-                                                @endphp
-                                                <img class="avatar__image" src="{{ $url }}" alt="{{ $user->name }}" />
+                                                <img class="avatar__image" src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}" />
                                             @endif
                                             <span
                                                 class="avatar__fallback">{{ strtoupper(substr($user->name, 0, 2)) }}</span>
@@ -171,7 +184,7 @@
                                             </svg>
                                         </button>
                                         <button type="button" wire:click="deleteUser({{ $user->id }})"
-                                            wire:confirm="Are you sure you want to delete {{ $user->name }}?"
+                                            wire:confirm="Apakah Anda yakin ingin menghapus {{ $user->name }}?"
                                             class="button button--ghost button--danger button--icon-only button--sm"
                                             aria-label="Delete {{ $user->name }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -203,6 +216,7 @@
                 </table>
             </div>
 
+            {{-- Footer / Pagination --}}
             <div class="card__footer">
                 <span class="text-xs text-muted-foreground">
                     @if ($users->total() > 0)
@@ -223,7 +237,8 @@
         </div>
     </section>
 
-    <div class="drawer drawer--floating" id="drawerBasic" data-stisla-drawer aria-labelledby="drawerBasicLabel">
+    {{-- Drawer Form (Create / Edit) --}}
+    <div class="drawer drawer--floating" id="drawerBasic" data-stisla-drawer aria-labelledby="drawerBasicLabel" wire:ignore.self>
         <div class="drawer__backdrop" data-stisla-drawer-dismiss></div>
         <form action="" wire:submit="saveUser">
             <div class="drawer__content">
@@ -235,6 +250,34 @@
                         wire:click="closeModal"><i data-lucide="x"></i></button>
                 </div>
                 <div class="drawer__body">
+                    {{-- Image Preview --}}
+                    <div class="field mb-4">
+                        <label class="field__label">Foto</label>
+                        @if ($image && !is_string($image))
+                            <div class="mb-2">
+                                <img src="{{ $image->temporaryUrl() }}"
+                                    alt="Preview"
+                                    style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" />
+                                <p class="text-xs text-muted-foreground mt-1">Preview foto baru</p>
+                            </div>
+                        @elseif ($existingImage)
+                            <div class="mb-2">
+                                <img src="{{ asset('storage/' . $existingImage) }}"
+                                    alt="Current image"
+                                    style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;" />
+                                <p class="text-xs text-muted-foreground mt-1">Foto saat ini</p>
+                            </div>
+                        @endif
+                        <input type="file" class="input" wire:model="image" accept="image/*" />
+                        <div class="field__description">Maks 8MB. Format: JPG, PNG, GIF, WEBP.</div>
+                        @error('image')
+                            <div class="field__error">{{ $message }}</div>
+                        @enderror
+                        {{-- Upload progress --}}
+                        <div wire:loading wire:target="image" class="text-xs text-primary mt-1">
+                            Mengupload foto...
+                        </div>
+                    </div>
                     <div class="field mb-4">
                         <label class="field__label">Nama</label>
                         <input type="text" class="input" wire:model="name" placeholder="Nama Pengguna" />
@@ -252,12 +295,12 @@
                     <div class="field mb-4">
                         <label class="field__label">Password
                             @if ($userId)
-                                <span class="text-xs text-muted-foreground ms-1">(leave blank to keep current)</span>
+                                <span class="text-xs text-muted-foreground ms-1">(kosongkan jika tidak ingin mengubah)</span>
                             @endif
                         </label>
                         <input type="password" class="input" wire:model="password" placeholder="Password" />
                         @if (!$userId)
-                            <div class="field__description">At least 8 characters.</div>
+                            <div class="field__description">Minimal 8 karakter.</div>
                         @endif
                         @error('password')
                             <div class="field__error">{{ $message }}</div>
@@ -267,6 +310,14 @@
                         <label class="field__label">Posisi</label>
                         <input type="text" class="input" wire:model="position" placeholder="Posisi Pengguna" />
                         @error('position')
+                            <div class="field__error">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="field mb-4">
+                        <label class="field__label">Order</label>
+                        <input type="number" class="input" wire:model="order" placeholder="Urutan tampil (0, 1, 2, ...)" min="0" />
+                        <div class="field__description">Nomor urut untuk posisi tampil di halaman publik.</div>
+                        @error('order')
                             <div class="field__error">{{ $message }}</div>
                         @enderror
                     </div>
@@ -289,14 +340,6 @@
                             <div class="field__error">{{ $message }}</div>
                         @enderror
                     </div>
-
-                    <div class="field mb-4">
-                        <label class="field__label">Foto</label>
-                        <input type="file" class="input" wire:model="image" accept="image/*" />
-                        @error('image')
-                            <div class="field__error">{{ $message }}</div>
-                        @enderror
-                    </div>
                     <div class="field mb-4">
                         <label class="flex items-center gap-2">
                             <input type="checkbox" wire:model="is_show" class="checkbox" />
@@ -308,7 +351,7 @@
                     <button type="button" class="button button--ghost button--neutral" data-stisla-drawer-dismiss
                         wire:click="closeModal">Cancel</button>
                     <button type="submit" class="button button--primary"
-                        wire:target="saveUser" wire:loading.attr="disabled">
+                        wire:target="saveUser, image" wire:loading.attr="disabled">
                         <span wire:loading.remove wire:target="saveUser">
                             {{ $userId ? 'Simpan Perubahan' : 'Simpan' }}
                         </span>
@@ -319,4 +362,35 @@
         </form>
     </div>
 
+    {{-- Scripts: drawer close + toast notification (vanilla JS) --}}
+    @script
+    <script>
+        // Auto-close drawer after save
+        $wire.on('close-drawer', () => {
+            const backdrop = document.querySelector('#drawerBasic [data-stisla-drawer-dismiss]');
+            if (backdrop) backdrop.click();
+        });
+
+        // Toast notification
+        let toastTimer = null;
+        $wire.on('notify', (params) => {
+            const message = params.message || (Array.isArray(params) ? params[0]?.message : '');
+            const toast = document.getElementById('livewire-toast');
+            const msgEl = document.getElementById('livewire-toast-message');
+            if (!toast || !msgEl) return;
+
+            clearTimeout(toastTimer);
+            msgEl.textContent = message;
+            toast.style.opacity = '1';
+            toast.style.transform = 'translateY(0)';
+            toast.style.pointerEvents = 'auto';
+
+            toastTimer = setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(8px)';
+                toast.style.pointerEvents = 'none';
+            }, 3000);
+        });
+    </script>
+    @endscript
 </div>
