@@ -93,6 +93,7 @@
                             <th scope="col">Photography</th>
                             <th scope="col">Subtitle</th>
                             <th scope="col">Keywords</th>
+                            <th scope="col">Content</th>
                             <th scope="col" class="text-end"><span class="sr-only">Actions</span></th>
                         </tr>
                     </thead>
@@ -132,8 +133,25 @@
                                         <span class="text-muted-foreground">—</span>
                                     @endif
                                 </td>
+                                <td>
+                                    @if ($item->content)
+                                        <span class="badge badge--soft badge--success text-xs">Custom GrapesJS</span>
+                                    @else
+                                        <span class="text-muted-foreground text-xs">Empty</span>
+                                    @endif
+                                </td>
                                 <td class="text-end">
                                     <div class="flex justify-end gap-1">
+                                        <a href="{{ route('admin.photographies.builder', $item->id) }}"
+                                            class="button button--ghost button--primary button--icon-only button--sm"
+                                            title="Edit Page Builder (GrapesJS)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+                                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5z" />
+                                                    <path stroke-linecap="round" d="M4 9h16M9 9v11" />
+                                                </g>
+                                            </svg>
+                                        </a>
                                         <button type="button" wire:click="openEditModal({{ $item->id }})"
                                             data-stisla-drawer-trigger="drawerBasic"
                                             class="button button--ghost button--neutral button--icon-only button--sm"
@@ -165,7 +183,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center py-12">
+                                <td colspan="6" class="text-center py-12">
                                     <div class="text-muted-foreground">
                                         <h3 class="font-semibold text-base mb-1">No photography items found</h3>
                                         <p class="text-sm">Try adjusting your search or add a new item to get started.</p>
@@ -272,12 +290,34 @@
 
                     <div class="field mb-4">
                         <label class="field__label">Deskripsi</label>
-                        <textarea class="textarea" rows="4" wire:model="description"
-                            placeholder="Deskripsi detail mengenai foto..."></textarea>
+                        <textarea class="textarea" rows="3" wire:model="description"
+                            placeholder="Deskripsi ringkas mengenai foto..."></textarea>
                         @error('description')
                             <div class="field__error">{{ $message }}</div>
                         @enderror
                     </div>
+
+                    @if ($photographyId)
+                        <div class="field mb-4">
+                            <label class="field__label">Visual Content Builder (GrapesJS)</label>
+                            <a href="{{ route('admin.photographies.builder', $photographyId) }}"
+                                class="button button--neutral button--outline w-full justify-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5z" />
+                                        <path stroke-linecap="round" d="M4 9h16M9 9v11" />
+                                    </g>
+                                </svg>
+                                <span>Buka GrapesJS Page Builder</span>
+                            </a>
+                            @if ($content)
+                                <div class="text-xs text-success mt-1 flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span>Konten kustom GrapesJS tersimpan ({{ strlen($content) }} karakter)</span>
+                                </div>
+                            @endif
+                        </div>
+                    @endif
                 </div>
                 <div class="drawer__footer">
                     <button type="button" class="button button--ghost button--neutral" data-stisla-drawer-dismiss

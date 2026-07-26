@@ -17,9 +17,9 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
         rel="stylesheet" />
 
-    <link href="assets/css/tailwind.css" rel="stylesheet" />
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="{{ asset('assets/css/tailwind.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/favicon.svg') }}" rel="icon" type="image/svg+xml" />
 </head>
 
 <body class="bg-[#f6f3ed] text-[#171717] antialiased">

@@ -24,6 +24,7 @@ class Photography extends Component
     public string $subtitle = '';
     public string $description = '';
     public string $keywordsInput = '';
+    public ?string $content = '';
 
     // Bulk selection
     public array $selectedItems = [];
@@ -39,6 +40,7 @@ class Photography extends Component
             'subtitle' => 'nullable|string|max:255',
             'description' => 'nullable|string',
             'keywordsInput' => 'nullable|string',
+            'content' => 'nullable|string',
         ];
     }
 
@@ -93,6 +95,7 @@ class Photography extends Component
         $this->subtitle = $photography->subtitle ?? '';
         $this->description = $photography->description ?? '';
         $this->keywordsInput = is_array($photography->keywords) ? implode(', ', $photography->keywords) : '';
+        $this->content = $photography->content ?? '';
     }
 
     public function closeModal(): void
@@ -109,6 +112,7 @@ class Photography extends Component
         $this->subtitle = '';
         $this->description = '';
         $this->keywordsInput = '';
+        $this->content = '';
         $this->resetValidation();
     }
 
@@ -138,6 +142,7 @@ class Photography extends Component
                 'subtitle' => $this->subtitle,
                 'description' => $this->description,
                 'keywords' => $keywords,
+                'content' => $this->content,
             ]
         );
 

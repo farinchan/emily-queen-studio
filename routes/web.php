@@ -17,5 +17,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::prefix('photographies')->name('photographies.')->group(function () {
         Route::get('/', App\Livewire\Photography::class)->name('index');
+        Route::get('/{photography}/builder', App\Livewire\PhotographyBuilder::class)->name('builder');
     });
 });

@@ -79,21 +79,6 @@
                                         <div class="media__meta">1 hour ago</div>
                                     </div>
                                 </a>
-                                <a href="#" class="media items-start">
-                                    <div class="media__figure mt-1">
-                                        <span class="avatar avatar--sm avatar--circle" data-stisla-avatar>
-                                            <img class="avatar__image"
-                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2.5&w=80&h=80&q=80"
-                                                alt="" />
-                                            <span class="avatar__fallback">ML</span>
-                                        </span>
-                                    </div>
-                                    <div class="media__content">
-                                        <div class="media__title">Marcus Lee</div>
-                                        <div class="media__description">Thanks for the quick turnaround.</div>
-                                        <div class="media__meta">Yesterday</div>
-                                    </div>
-                                </a>
                             </div>
                             <div class="popover__footer">
                                 <a href="#" class="button button--block button--outline button--neutral">View
@@ -150,42 +135,7 @@
                                         <div class="media__meta">5 minutes ago</div>
                                     </div>
                                 </a>
-                                <a href="#" class="media items-start">
-                                    <div class="media__figure mt-1">
-                                        <span class="icon-box icon-box--danger"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                                viewBox="0 0 24 24" aria-hidden="true">
-                                                <g fill="none">
-                                                    <path stroke="currentColor" stroke-width="1.5"
-                                                        d="M5.312 10.762C8.23 5.587 9.689 3 12 3s3.77 2.587 6.688 7.762l.364.644c2.425 4.3 3.638 6.45 2.542 8.022S17.786 21 12.364 21h-.728c-5.422 0-8.134 0-9.23-1.572s.117-3.722 2.542-8.022z" />
-                                                    <path stroke="currentColor" stroke-linecap="round"
-                                                        stroke-width="1.5" d="M12 8v5" />
-                                                    <circle cx="12" cy="16" r="1"
-                                                        fill="currentColor" />
-                                                </g>
-                                            </svg></span>
-                                    </div>
-                                    <div class="media__content">
-                                        <div class="media__title">Low stock alert</div>
-                                        <div class="media__description">Headphone Blitz is down to 4 units.</div>
-                                        <div class="media__meta">1 hour ago</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="media items-start">
-                                    <div class="media__figure mt-1">
-                                        <span class="avatar avatar--sm avatar--circle" data-stisla-avatar>
-                                            <img class="avatar__image"
-                                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=facearea&facepad=2.5&w=80&h=80&q=80"
-                                                alt="" />
-                                            <span class="avatar__fallback">PP</span>
-                                        </span>
-                                    </div>
-                                    <div class="media__content">
-                                        <div class="media__title">Priya Patel</div>
-                                        <div class="media__description">Started following your store.</div>
-                                        <div class="media__meta">3 hours ago</div>
-                                    </div>
-                                </a>
+
                             </div>
                             <div class="popover__footer">
                                 <a href="#" class="button button--block button--outline button--neutral">View

@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Livewire\Photography as PhotographyComponent;
+use App\Livewire\PhotographyBuilder;
 use App\Models\Photography;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
@@ -70,6 +71,36 @@ class PhotographyCrudTest extends TestCase
 
         $updated = Photography::find($photo->id);
         $this->assertEquals(['baru', 'update'], $updated->keywords);
+    }
+
+    public function test_builder_page_can_be_rendered(): void
+    {
+        $photo = Photography::create([
+            'title' => 'Foto Layout',
+            'image' => 'photographies/layout.jpg',
+        ]);
+
+        $this->get(route('admin.photographies.builder', $photo->id))
+            ->assertStatus(200);
+    }
+
+    public function test_can_save_grapesjs_content_via_builder(): void
+    {
+        $photo = Photography::create([
+            'title' => 'Foto Builder',
+            'image' => 'photographies/builder.jpg',
+        ]);
+
+        $htmlContent = '<section><h1>Custom GrapesJS Content via Dedicated Builder</h1></section>';
+
+        Livewire::test(PhotographyBuilder::class, ['photography' => $photo])
+            ->call('saveContent', $htmlContent)
+            ->assertDispatched('notify');
+
+        $this->assertDatabaseHas('photographies', [
+            'id' => $photo->id,
+            'content' => $htmlContent,
+        ]);
     }
 
     public function test_can_delete_photography(): void
