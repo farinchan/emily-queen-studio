@@ -22,6 +22,7 @@ class Dashboard extends Component
     public array $topCountries = [];
     public array $deviceBreakdown = [];
     public array $browserBreakdown = [];
+    public array $platformBreakdown = [];
 
     public function mount(): void
     {
@@ -75,6 +76,14 @@ class Dashboard extends Component
         $this->browserBreakdown = Visitor::select('browser', DB::raw('count(*) as total'))
             ->whereNotNull('browser')
             ->groupBy('browser')
+            ->orderByDesc('total')
+            ->get()
+            ->toArray();
+
+        // Platform Breakdown
+        $this->platformBreakdown = Visitor::select('platform', DB::raw('count(*) as total'))
+            ->whereNotNull('platform')
+            ->groupBy('platform')
             ->orderByDesc('total')
             ->get()
             ->toArray();

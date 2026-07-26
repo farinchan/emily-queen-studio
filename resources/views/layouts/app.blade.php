@@ -37,18 +37,26 @@
                         <div class="page__headline">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb__item"><a href="/meridian/">Dashboard</a></li>
-                                    <li class="breadcrumb__item" aria-current="page">Blank</li>
+                                    <li class="breadcrumb__item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                    @if (isset($breadcrumbs))
+                                        {{ $breadcrumbs }}
+                                    @elseif (isset($title) && $title !== 'Dashboard')
+                                        <li class="breadcrumb__item" aria-current="page">{{ $title }}</li>
+                                    @endif
                                 </ol>
                             </nav>
-                            <h1 class="page__title">Blank page</h1>
-                            <p class="page__description">
-                                A clean starting point — duplicate this file and build your view.
-                            </p>
+                            <h1 class="page__title">{{ $title ?? 'Dashboard' }}</h1>
+                            @if (isset($description) && $description)
+                                <p class="page__description">
+                                    {{ $description }}
+                                </p>
+                            @endif
                         </div>
-                        <div class="page__action">
-                            {{ $action ?? '' }}
-                        </div>
+                        @if (isset($action) && $action)
+                            <div class="page__action">
+                                {{ $action }}
+                            </div>
+                        @endif
                     </header>
 
                     <div class="page__body">

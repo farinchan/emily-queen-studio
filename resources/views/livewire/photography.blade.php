@@ -1,5 +1,7 @@
+<x-slot:description>Kelola galeri dan portofolio karya fotografi.</x-slot:description>
+
 <x-slot:action>
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+    <div class="flex items-center gap-2">
         <button type="button" class="button button--primary" data-stisla-drawer-trigger="drawerBasic"
             wire:click="openCreateModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
@@ -9,9 +11,9 @@
                     <path stroke-linecap="round" d="M15 12h-3m0 0H9m3 0V9m0 3v3" />
                 </g>
             </svg>
-            Add photography
+            Tambah Portfolio
         </button>
-    </h2>
+    </div>
 </x-slot:action>
 
 <div>

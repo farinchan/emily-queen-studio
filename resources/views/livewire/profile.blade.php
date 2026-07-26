@@ -1,4 +1,5 @@
 <div>
+    <x-slot:description>Kelola informasi akun, foto profil, dan keamanan password Anda.</x-slot:description>
     {{-- Toast Notification Container (vanilla JS) --}}
     <div id="livewire-toast"
         style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;min-width:320px;opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease;pointer-events:none;">
