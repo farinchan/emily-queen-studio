@@ -1,5 +1,5 @@
 @php
-    $photography = \App\Models\Photography::all();
+    $photographyNav = \App\Models\Photography::select('id', 'title', 'slug')->get();
 @endphp
 <!-- Header -->
 <header class="fixed inset-x-0 top-0 z-50 border-b border-white/0 text-white transition-all duration-500" id="siteHeader">
@@ -13,36 +13,36 @@
             </span>
             <span class="hidden text-[10px] font-medium uppercase tracking-[.28em] sm:block">Menu</span>
         </button>
-        <a aria-label="Go to home" class="absolute left-1/2 -translate-x-1/2 text-center" href="index.html">
+        <a aria-label="Go to home" class="absolute left-1/2 -translate-x-1/2 text-center" href="{{ route('home') }}">
             <span class="block text-[28px] font-semibold tracking-[.35em] sm:text-[34px]">AXIOO</span>
             <span class="mt-1 hidden text-[7px] uppercase tracking-[.52em] sm:block">Stories of Love</span>
         </a>
         <nav aria-label="Primary navigation"
             class="hidden items-center gap-8 text-[10px] font-medium uppercase tracking-[.22em] lg:flex">
             <div class="group relative py-10">
-                <button class="flex items-center gap-2 transition-opacity hover:opacity-60" type="button">
+                <a href="#" class="flex items-center gap-2 transition-opacity hover:opacity-60">
                     Photography
                     <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none"
                         stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
                         <path d="m6 9 6 6 6-6"></path>
                     </svg>
-                </button>
+                </a>
                 <div
                     class="pointer-events-none absolute left-0 top-[84px] w-64 translate-y-3 border border-black/5 bg-white p-7 text-[#171717] opacity-0 shadow-2xl shadow-black/10 transition-all duration-300 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
                     <div class="space-y-4 text-[9px] tracking-[.18em]">
-                        @foreach ($photography as $photo)
-                            <a class="block hover:opacity-45" href="{{ $photo->url }}">{{ $photo->title }}</a>
+                        @foreach ($photographyNav as $photo)
+                            <a class="block hover:opacity-45" href="{{ route('photography.show', $photo->slug) }}">{{ $photo->title }}</a>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <a class="py-10 transition-opacity hover:opacity-60" href="about.html">About</a>
-            <a class="py-10 transition-opacity hover:opacity-60" href="contact.html">Get in Touch</a>
+            <a class="py-10 transition-opacity hover:opacity-60" href="#contact">About</a>
+            <a class="py-10 transition-opacity hover:opacity-60" href="#contact">Get in Touch</a>
         </nav>
         <div class="hidden items-center gap-7 lg:flex">
             <a class="text-[9px] font-medium uppercase tracking-[.2em] transition-opacity hover:opacity-60"
-                href="contact.html">Bali</a>
+                href="#contact">Bali</a>
             <span class="h-4 w-px bg-current opacity-30"></span>
             <button aria-label="Open search" class="transition-opacity hover:opacity-60" id="searchButton"
                 type="button">
@@ -66,7 +66,7 @@
     id="mobileMenu">
     <div class="flex h-full flex-col overflow-y-auto px-6 py-8 sm:px-10">
         <div class="flex items-center justify-between">
-            <span class="text-2xl font-semibold tracking-[.3em]">AXIOO</span>
+            <a class="text-2xl font-semibold tracking-[.3em]" href="{{ route('home') }}">AXIOO</a>
             <button aria-label="Close navigation" class="grid h-11 w-11 place-items-center border border-white/20"
                 id="closeMenuButton" type="button">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
@@ -84,17 +84,16 @@
                     </svg>
                 </button>
                 <div class="accordion-content grid max-h-0 overflow-hidden transition-all duration-500">
-
                     <div class="space-y-4 pb-3 pt-6 text-xs uppercase tracking-[.2em] text-white/60">
-                        @foreach ($photography as $photo)
-                            <a class="mobile-link block" href="{{ $photo->url }}">{{ $photo->title }}</a>
+                        @foreach ($photographyNav as $photo)
+                            <a class="mobile-link block" href="{{ route('photography.show', $photo->slug) }}">{{ $photo->title }}</a>
                         @endforeach
                     </div>
                 </div>
             </div>
             <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl"
-                href="about.html">About</a>
-            <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="contact.html">Get
+                href="#contact">About</a>
+            <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="#contact">Get
                 in Touch</a>
         </nav>
         <div
@@ -103,7 +102,7 @@
                 <a class="block" href="#">Instagram</a>
                 <a class="block" href="#">YouTube</a>
             </div>
-            <a href="contact.html">Axioo Bali ↗</a>
+            <a href="#contact">Axioo Bali ↗</a>
         </div>
     </div>
 </div>

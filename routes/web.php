@@ -6,6 +6,9 @@ use App\Http\Controllers\Front\InstagramFeedController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('home');
+Route::get('/photography/{photography}', [App\Http\Controllers\Front\PhotographyController::class, 'show'])->name('photography.show');
+
+
 Route::get('/instagram-feed', InstagramFeedController::class)->name('instagram.feed');
 Route::get('/instagram/callback', [InstagramController::class, 'callback'])->name('instagram.callback');
 

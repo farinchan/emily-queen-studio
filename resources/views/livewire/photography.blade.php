@@ -147,7 +147,7 @@
                                 </td>
                                 <td class="text-end">
                                     <div class="flex justify-end gap-1">
-                                        <a href="{{ route('admin.photographies.builder', $item->id) }}"
+                                        <a href="{{ route('admin.photographies.builder', $item) }}"
                                             class="button button--ghost button--primary button--icon-only button--sm"
                                             title="Edit Page Builder (GrapesJS)">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
@@ -314,7 +314,7 @@
                     @if ($photographyId)
                         <div class="field mb-4">
                             <label class="field__label">Visual Content Builder (GrapesJS)</label>
-                            <a href="{{ route('admin.photographies.builder', $photographyId) }}"
+                            <a href="{{ route('admin.photographies.builder', $slug ?: $photographyId) }}"
                                 class="button button--neutral button--outline w-full justify-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
                                     <g fill="none" stroke="currentColor" stroke-width="1.5">
