@@ -10,4 +10,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::prefix('users')->name('users.')->group(function () {
         Route::get('/', App\Livewire\User::class)->name('index');
     });
+
+    Route::prefix('banners')->name('banners.')->group(function () {
+        Route::get('/', App\Livewire\Banner::class)->name('index');
+    });
+
+    Route::prefix('photographies')->name('photographies.')->group(function () {
+        Route::get('/', App\Livewire\Photography::class)->name('index');
+    });
 });

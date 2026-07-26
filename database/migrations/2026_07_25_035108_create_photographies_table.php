@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('subtitle')->nullable();
             $table->text('description')->nullable();
             $table->json('keywords')->nullable();
+            $table->longText('content')->nullable();
             $table->timestamps();
         });
     }

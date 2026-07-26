@@ -214,6 +214,29 @@
                             </svg><span>Pengguna</span>
                         </a>
                     </li>
+                    <li class="sidebar__item">
+                        <a class="sidebar__button" href="{{ route('admin.banners.index') }}" @if(Route::is('admin.banners.index')) aria-current="page" @endif>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect width="18" height="14" x="3" y="5" rx="2" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m3 16l5-5c.928-.893 2.072-.893 3 0l5 5m-2-2l1-1c.928-.893 2.072-.893 3 0l2 2" />
+                                    <circle cx="8.5" cy="9.5" r="1.5" fill="currentColor" />
+                                </g>
+                            </svg><span>Banner</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a class="sidebar__button" href="{{ route('admin.photographies.index') }}" @if(Route::is('admin.photographies.index')) aria-current="page" @endif>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 5.5A2.25 2.25 0 0 0 3 7.75v10.5A2.25 2.25 0 0 0 5.25 20.5h13.5A2.25 2.25 0 0 0 21 18.25V7.75A2.25 2.25 0 0 0 18.75 5.5a2.31 2.31 0 0 1-1.641.675l-.545 1.09a2.25 2.25 0 0 1-2.012 1.235h-5.104a2.25 2.25 0 0 1-2.012-1.235z" />
+                                    <circle cx="12" cy="14" r="3" />
+                                </g>
+                            </svg><span>Photography</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
