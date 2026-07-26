@@ -69,9 +69,18 @@
                                 </g>
                             </svg><span>Photography</span>
                         </a>
+                    <li class="sidebar__item">
+                        <a class="sidebar__button" href="{{ route('admin.instagram.index') }}"
+                            @if (Route::is('admin.instagram.*')) aria-current="page" @endif>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                                </g>
+                            </svg><span>Instagram Feed</span>
+                        </a>
                     </li>
-
-
                 </ul>
             </div>
 
