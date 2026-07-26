@@ -202,8 +202,8 @@
                         category: 'Page Sections',
                         content: `
                             <section class="py-16 px-6 max-w-3xl mx-auto text-center">
-                                <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-full overflow-hidden mb-5 shadow-sm bg-black/5">
-                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Photographer Avatar" class="w-full h-full object-cover" />
+                                <div style="width: 72px; height: 72px;" class="mx-auto rounded-full overflow-hidden mb-5 shadow-sm bg-black/5">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Photographer Avatar" class="w-full h-full object-cover" />
                                 </div>
                                 <span class="text-[9px] uppercase tracking-[.28em] text-[#817a72] block mb-1">Captured By</span>
                                 <h3 class="font-display text-3xl text-[#171717] mb-3">Emily Queen</h3>
@@ -219,11 +219,11 @@
                         category: 'Page Sections',
                         content: `
                             <section class="py-16 px-6 max-w-3xl mx-auto">
-                                <div class="flex flex-col sm:flex-row items-center gap-8 p-6 sm:p-8 rounded-sm border border-black/5 bg-[#faf9f6]">
-                                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden flex-shrink-0 bg-black/5 shadow-sm">
-                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Photographer" class="w-full h-full object-cover" />
+                                <div class="flex flex-col sm:flex-row items-center gap-6 p-6 sm:p-8 rounded-sm border border-black/5 bg-[#faf9f6]">
+                                    <div style="width: 72px; height: 72px; flex-shrink: 0;" class="rounded-full overflow-hidden bg-black/5 shadow-sm">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Photographer" class="w-full h-full object-cover" />
                                     </div>
-                                    <div class="space-y-2  sm:text-left">
+                                    <div class="space-y-2 sm:text-left">
                                         <span class="text-[9px] uppercase tracking-[.28em] text-[#817a72] block">Captured By</span>
                                         <h3 class="font-display text-3xl text-[#171717]">Emily Queen</h3>
                                         <p class="text-sm font-light text-black/70 leading-relaxed">
