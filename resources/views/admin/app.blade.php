@@ -65,6 +65,8 @@
     <script src=" {{ asset('back-assets/js/charts.js') }} "></script>
     <script src=" {{ asset('back-assets/js/order-form.js') }} "></script>
     <script src=" {{ asset('back-assets/js/table-select.js') }} "></script>
+
+
 </body>
 
 </html>

@@ -22,11 +22,14 @@ class DatabaseSeeder extends Seeder
         Role::create(['name' => 'admin']);
 
         User::create([
+            'order' => 1,
+            'position' => 'Administrator',
             'name' => 'Fajri Rinaldi Chan',
             'email' => 'fajri@gariskode.com',
             'password' => bcrypt('password'),
             'about' => 'I am a passionate software developer with a love for creating innovative solutions.',
             'instagram' => 'https://www.instagram.com/fajri_chan/',
+            'is_show' => true,
         ])->assignRole('admin');
 
         Banner::create([
