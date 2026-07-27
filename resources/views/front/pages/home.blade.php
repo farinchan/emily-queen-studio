@@ -88,62 +88,55 @@
             </div>
         </div>
     </section>
+
     <!-- Featured Mosaic -->
-    <section class="pb-28 sm:pb-36 lg:pb-44">
-        <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
-            <div class="grid gap-4 md:grid-cols-12 md:grid-rows-[420px_260px] lg:grid-rows-[520px_330px]">
-                <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-8 md:row-span-1"
-                    href="photography-tying-the-knot.html">
-                    <img alt="Elegant wedding ceremony" class="h-full w-full object-cover opacity-90"
-                        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent">
-                    </div>
-                    <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-10">
-                        <p class="mb-3 text-[9px] uppercase tracking-[.26em] text-white/65">Tying The Knot</p>
-                        <h3 class="font-display text-4xl sm:text-5xl">A Holy Day</h3>
-                        <p class="mt-3 text-[10px] uppercase tracking-[.2em] text-white/70">Wedding photography by
-                            Tonny</p>
-                    </div>
-                </a>
-                <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-4 md:row-span-2"
-                    href="videography-tying-the-knot.html">
-                    <img alt="Wedding couple in a garden" class="h-full w-full object-cover opacity-90"
-                        src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&amp;fit=crop&amp;w=1200&amp;q=88" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10"></div>
-                    <div
-                        class="absolute right-6 top-7 grid h-14 w-14 place-items-center rounded-full border border-white/55 text-white transition-transform duration-500 group-hover:scale-110">
-                        <svg class="ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"></path>
-                        </svg>
-                    </div>
-                    <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
-                        <p class="mb-3 text-[9px] uppercase tracking-[.26em] text-white/65">Wedding Film</p>
-                        <h3 class="font-display text-4xl sm:text-5xl">Not Yet,<br />Then Forever</h3>
-                    </div>
-                </a>
-                <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-4"
-                    href="photography-she-said-yes.html">
-                    <img alt="Newlywed couple laughing" class="h-full w-full object-cover opacity-85"
-                        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=1100&amp;q=88" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-white">
-                        <p class="mb-2 text-[8px] uppercase tracking-[.25em] text-white/65">She Said Yes</p>
-                        <h3 class="font-display text-3xl">Life Could Be a Dream</h3>
-                    </div>
-                </a>
-                <a class="image-zoom reveal group relative overflow-hidden bg-black md:col-span-4"
-                    href="photography-portraiture.html">
-                    <img alt="Portrait of a bride" class="h-full w-full object-cover opacity-85"
-                        src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=1100&amp;q=88" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-6 text-white">
-                        <p class="mb-2 text-[8px] uppercase tracking-[.25em] text-white/65">Portraiture</p>
-                        <h3 class="font-display text-3xl">Quiet Confidence</h3>
-                    </div>
-                </a>
+    @if(isset($photographies) && $photographies->count() > 0)
+        <section class="pb-28 sm:pb-36 lg:pb-44">
+            <div class="mx-auto max-w-[1600px] px-4 sm:px-8 lg:px-12">
+                <div class="grid gap-4 md:grid-cols-12 md:grid-rows-[420px_260px] lg:grid-rows-[520px_330px]">
+                    @foreach($photographies->take(4) as $index => $photo)
+                        @php
+                            $gridClass = match($index) {
+                                0 => 'md:col-span-8 md:row-span-1',
+                                1 => 'md:col-span-4 md:row-span-2',
+                                2 => 'md:col-span-4',
+                                3 => 'md:col-span-4',
+                                default => 'md:col-span-4',
+                            };
+                        @endphp
+                        <a class="image-zoom reveal group relative overflow-hidden bg-black {{ $gridClass }}"
+                            href="{{ route('photography.show', $photo->slug) }}">
+                            <img alt="{{ $photo->title }}" class="h-full w-full object-cover opacity-85 transition duration-700 group-hover:opacity-100"
+                                src="{{ $photo->image ?: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=88' }}" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                            @if($index === 1)
+                                <div class="absolute right-6 top-7 grid h-14 w-14 place-items-center rounded-full border border-white/55 text-white transition-transform duration-500 group-hover:scale-110">
+                                    <svg class="ml-1 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"></path>
+                                    </svg>
+                                </div>
+                            @endif
+                            <div class="absolute inset-x-0 bottom-0 p-6 sm:p-9 text-white">
+                                <p class="mb-2 text-[8px] sm:text-[9px] uppercase tracking-[.25em] text-white/65">
+                                    {{ $photo->label ?: 'Photography' }}
+                                </p>
+                                <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                                    {{ $photo->title }}
+                                </h3>
+                                @if($photo->subtitle)
+                                    <p class="mt-2 text-[10px] uppercase tracking-[.2em] text-white/70">
+                                        {{ $photo->subtitle }}
+                                    </p>
+                                @endif
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
+
     <!-- Journal -->
     <section class="border-t border-black/10 px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40" id="journal">
         <div class="mx-auto max-w-[1400px]">

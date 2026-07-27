@@ -14,8 +14,8 @@
             <span class="hidden text-[10px] font-medium uppercase tracking-[.28em] sm:block">Menu</span>
         </button>
         <a aria-label="Go to home" class="absolute left-1/2 -translate-x-1/2 text-center" href="{{ route('home') }}">
-            <span class="block text-[28px] font-semibold tracking-[.35em] sm:text-[34px]">AXIOO</span>
-            <span class="mt-1 hidden text-[7px] uppercase tracking-[.52em] sm:block">Stories of Love</span>
+            <span class="block text-[28px] font-semibold tracking-[.15em] sm:text-[34px]">Emily Queen</span>
+            <span class="mt-1 hidden text-[7px] uppercase tracking-[.52em] sm:block">Home Photo Studio</span>
         </a>
         <nav aria-label="Primary navigation"
             class="hidden items-center gap-8 text-[10px] font-medium uppercase tracking-[.22em] lg:flex">
@@ -42,7 +42,7 @@
         </nav>
         <div class="hidden items-center gap-7 lg:flex">
             <a class="text-[9px] font-medium uppercase tracking-[.2em] transition-opacity hover:opacity-60"
-                href="#contact">Bali</a>
+                href="#contact">Padang</a>
             <span class="h-4 w-px bg-current opacity-30"></span>
             <button aria-label="Open search" class="transition-opacity hover:opacity-60" id="searchButton"
                 type="button">
