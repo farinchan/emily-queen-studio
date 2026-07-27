@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Banner;
 use App\Models\Photography;
+use App\Models\Setting;
 use App\Models\User;
 use App\Models\Visitor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -24,6 +25,8 @@ class DatabaseSeeder extends Seeder
         if (!Role::where('name', 'admin')->exists()) {
             Role::create(['name' => 'admin']);
         }
+
+        $this->call(SettingSeeder::class);
 
         if (!User::where('email', 'fajri@gariskode.com')->exists()) {
             User::create([

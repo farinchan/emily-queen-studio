@@ -42,8 +42,11 @@
 
             // Header style on scroll
             const updateHeader = () => {
-                const scrolled = window.scrollY > 60;
-                if (header) {
+                if (header && header.dataset.solid === 'true') {
+                    header.classList.add('bg-white', 'text-[#171717]', 'border-black/10', 'shadow-sm');
+                    header.classList.remove('text-white', 'border-white/0');
+                } else if (header) {
+                    const scrolled = window.scrollY > 60;
                     header.classList.toggle('bg-white', scrolled);
                     header.classList.toggle('text-[#171717]', scrolled);
                     header.classList.toggle('border-black/10', scrolled);

@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index'])->name('home');
 Route::get('/photography/{photography}', [App\Http\Controllers\Front\PhotographyController::class, 'show'])->name('photography.show');
 Route::get('/about', [App\Http\Controllers\Front\AboutController::class, 'index'])->name('about');
+Route::get('/contact', [App\Http\Controllers\Front\ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\Front\ContactController::class, 'store'])->name('contact.store');
 
 
 Route::get('/instagram-feed', InstagramFeedController::class)->name('instagram.feed');

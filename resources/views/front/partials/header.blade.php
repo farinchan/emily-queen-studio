@@ -1,8 +1,11 @@
 @php
     $photographyNav = \App\Models\Photography::select('id', 'title', 'slug')->get();
+    $isContact = request()->routeIs('contact');
 @endphp
 <!-- Header -->
-<header class="fixed inset-x-0 top-0 z-50 border-b border-white/0 text-white transition-all duration-500" id="siteHeader">
+<header class="fixed inset-x-0 top-0 z-50 transition-all duration-500 {{ $isContact ? 'bg-white text-[#171717] border-b border-black/10 shadow-sm' : 'border-b border-white/0 text-white' }}"
+    id="siteHeader"
+    data-solid="{{ $isContact ? 'true' : 'false' }}">
     <div class="mx-auto flex h-24 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <button aria-expanded="false" aria-label="Open navigation" class="group flex items-center gap-3 lg:hidden"
             id="menuButton" type="button">
@@ -38,11 +41,11 @@
             </div>
 
             <a class="py-10 transition-opacity hover:opacity-60" href="{{ route('about') }}">About</a>
-            <a class="py-10 transition-opacity hover:opacity-60" href="#contact">Get in Touch</a>
+            <a class="py-10 transition-opacity hover:opacity-60" href="{{ route('contact') }}">Get in Touch</a>
         </nav>
         <div class="hidden items-center gap-7 lg:flex">
             <a class="text-[9px] font-medium uppercase tracking-[.2em] transition-opacity hover:opacity-60"
-                href="#contact">Padang</a>
+                href="{{ route('contact') }}">Padang</a>
             <span class="h-4 w-px bg-current opacity-30"></span>
             <button aria-label="Open search" class="transition-opacity hover:opacity-60" id="searchButton"
                 type="button">
@@ -66,7 +69,7 @@
     id="mobileMenu">
     <div class="flex h-full flex-col overflow-y-auto px-6 py-8 sm:px-10">
         <div class="flex items-center justify-between">
-            <a class="text-2xl font-semibold tracking-[.3em]" href="{{ route('home') }}">AXIOO</a>
+            <a class="text-2xl font-semibold tracking-[.3em]" href="{{ route('home') }}">EMILY QUEEN STUDIO</a>
             <button aria-label="Close navigation" class="grid h-11 w-11 place-items-center border border-white/20"
                 id="closeMenuButton" type="button">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24">
@@ -93,7 +96,7 @@
             </div>
             <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl"
                 href="{{ route('about') }}">About</a>
-            <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="#contact">Get
+            <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="{{ route('contact') }}">Get
                 in Touch</a>
         </nav>
         <div
@@ -102,7 +105,7 @@
                 <a class="block" href="#">Instagram</a>
                 <a class="block" href="#">YouTube</a>
             </div>
-            <a href="#contact">Axioo Bali ↗</a>
+            <a href="{{ route('contact') }}">Emily Queen Studio</a>
         </div>
     </div>
 </div>
