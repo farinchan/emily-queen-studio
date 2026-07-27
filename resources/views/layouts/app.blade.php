@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href=" {{ asset('back-assets/css/style.css') }} " />
 
-    <title>{{ $title ?? config('app.name') }}</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{{ isset($title) ? $title . ' — Admin Panel | ' . config('app.name', 'Emily Queen Studio') : 'Admin Panel — ' . config('app.name', 'Emily Queen Studio') }}</title>
 
     @livewireStyles
 </head>

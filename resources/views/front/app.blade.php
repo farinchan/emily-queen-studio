@@ -1,14 +1,74 @@
+@php
+    $siteName = \App\Models\Setting::get('site_name', 'Emily Queen Studio');
+    $siteDesc = \App\Models\Setting::get('site_description', 'Studio Foto & Cinematography Profesional di padang. Melayani Wedding, Prewedding, Family, dan Editorial Photography.');
+    $siteKeywords = \App\Models\Setting::get('site_keyword', 'foto studio, wedding photography, prewedding, family portrait, padang, emily queen studio');
+
+    $pageTitle = trim($__env->yieldContent('title'));
+    $seoTitle = $pageTitle ? $pageTitle . ' - ' . $siteName : $siteName;
+
+    $pageDesc = trim($__env->yieldContent('meta_description'));
+    $seoDescription = $pageDesc ?: $siteDesc;
+
+    $pageKeywords = trim($__env->yieldContent('meta_keywords'));
+    $seoKeywords = $pageKeywords ? $pageKeywords . ', ' . $siteKeywords : $siteKeywords;
+
+    $pageImage = trim($__env->yieldContent('meta_image'));
+    $seoImage = $pageImage ?: asset('assets/favicon.svg');
+
+    $ogType = trim($__env->yieldContent('og_type')) ?: 'website';
+    $seoUrl = url()->current();
+@endphp
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth" lang="id">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta
-        content="A complete responsive wedding photography and cinematography portfolio project built with Tailwind CSS."
-        name="description" />
-    <title>Emily Queen Home Foto Studio</title>
-    <!-- Tailwind CSS Browser CDN -->
+    <title>{{ $seoTitle }}</title>
+
+    <!-- Search Engine Meta Tags -->
+    <meta name="description" content="{{ $seoDescription }}" />
+    <meta name="keywords" content="{{ $seoKeywords }}" />
+    <meta name="author" content="Emily Queen Studio" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="{{ $seoUrl }}" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ route('sitemap') }}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ $ogType }}" />
+    <meta property="og:url" content="{{ $seoUrl }}" />
+    <meta property="og:title" content="{{ $seoTitle }}" />
+    <meta property="og:description" content="{{ $seoDescription }}" />
+    <meta property="og:image" content="{{ $seoImage }}" />
+    <meta property="og:site_name" content="{{ $siteName }}" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ $seoUrl }}" />
+    <meta name="twitter:title" content="{{ $seoTitle }}" />
+    <meta name="twitter:description" content="{{ $seoDescription }}" />
+    <meta name="twitter:image" content="{{ $seoImage }}" />
+
+    <!-- Structured Data (JSON-LD) for PhotographyStudio & LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "{{ '@' }}context": "https://schema.org",
+      "{{ '@' }}type": "PhotographyBusiness",
+      "name": "{{ $siteName }}",
+      "description": "{{ $seoDescription }}",
+      "url": "{{ url('/') }}",
+      "telephone": "{{ \App\Models\Setting::get('whatsapp', '') }}",
+      "address": {
+        "{{ '@' }}type": "PostalAddress",
+        "streetAddress": "{{ \App\Models\Setting::get('address', 'Jakarta') }}"
+      },
+      "sameAs": [
+        "{{ \App\Models\Setting::get('instagram', '') }}",
+        "{{ \App\Models\Setting::get('facebook', '') }}",
+        "{{ \App\Models\Setting::get('youtube', '') }}"
+      ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />

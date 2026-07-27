@@ -1,5 +1,7 @@
 @extends('front.app')
 
+@section('title', 'About Us')
+
 @section('content')
     <section class="page-hero relative min-h-[760px] overflow-hidden bg-black text-white"><img
             src="https://warnaindonesiaphoto.com/wp-content/uploads/2022/03/Referensi-Studio-Foto-Group-Terbaik-4.jpg"

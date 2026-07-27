@@ -11,6 +11,9 @@ Route::get('/about', [App\Http\Controllers\Front\AboutController::class, 'index'
 Route::get('/contact', [App\Http\Controllers\Front\ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\Front\ContactController::class, 'store'])->name('contact.store');
 
+Route::get('/sitemap.xml', [App\Http\Controllers\Front\SitemapController::class, 'index'])->name('sitemap');
+Route::get('/robots.txt', [App\Http\Controllers\Front\SitemapController::class, 'robots'])->name('robots');
+
 
 Route::get('/instagram-feed', InstagramFeedController::class)->name('instagram.feed');
 Route::get('/instagram/callback', [InstagramController::class, 'callback'])->name('instagram.callback');

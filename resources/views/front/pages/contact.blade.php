@@ -1,5 +1,7 @@
 @extends('front.app')
 
+@section('title', 'Contact Us')
+
 @section('content')
     {{-- Get in touch --}}
     <section class="contact-section-spacing px-6 pb-24 sm:px-10 sm:pb-32 lg:px-16">

@@ -1,5 +1,10 @@
 @extends('front.app')
 
+@section('title', $photography->title)
+@section('meta_description', $photography->subtitle ?: $photography->description)
+@section('meta_image', $photography->image)
+@section('meta_keywords', is_array($photography->keywords) ? implode(', ', $photography->keywords) : ($photography->keywords ?: ''))
+
 @section('content')
     <section class="page-hero relative min-h-[760px] overflow-hidden bg-black text-white">
         <img src="{{ $photography->image }}" alt="{{ $photography->title }}" class="absolute inset-0 h-full w-full object-cover opacity-60">
