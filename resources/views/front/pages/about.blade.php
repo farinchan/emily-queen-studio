@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="page-hero relative min-h-[760px] overflow-hidden bg-black text-white"><img
-            src="https://warnaindonesiaphoto.com/wp-content/uploads/2022/03/Referensi-Studio-Foto-Group-Terbaik-2.jpg"
+            src="https://warnaindonesiaphoto.com/wp-content/uploads/2022/03/Referensi-Studio-Foto-Group-Terbaik-4.jpg"
             alt="A House of Visual Storytellers" class="absolute inset-0 h-full w-full object-cover">
         <div
             class="relative z-10 mx-auto flex min-h-[760px] max-w-[1600px] items-end px-6 pb-20 pt-40 sm:px-10 sm:pb-28 lg:px-16">
