@@ -289,7 +289,7 @@
             <div class="reveal mb-14 flex flex-col gap-7 px-2 sm:mb-20 md:flex-row md:items-end md:justify-between">
                 <div>
                     <p class="mb-5 text-[9px] uppercase tracking-[.34em] text-[#817a72]">From Instagram</p>
-                    <h2 class="font-display text-6xl sm:text-7xl">Follow @axioo</h2>
+                    <h2 class="font-display text-5xl sm:text-6xl">Follow @emilyqueen.homephotostudio</h2>
                 </div>
                 <div class="flex gap-5 text-[9px] uppercase tracking-[.22em]">
                     <a class="border-b border-black/25 pb-1 hover:border-black" href="#">Instagram</a>

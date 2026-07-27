@@ -105,21 +105,12 @@ class DatabaseSeeder extends Seeder
             ]);
 
             Photography::create([
-                'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
-                'title' => 'Joyful Milestone',
-                'slug' => 'joyful-milestone',
-                'subtitle' => 'Your achievement, framed with style.',
-                'description' => 'A collection of joyful milestone moments, capturing the essence of celebration and success.',
-                'keywords' => ['milestone', 'celebration', 'joyful'],
-            ]);
-
-            Photography::create([
-                'image' => 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2200&q=90',
-                'title' => 'Office Group Photo',
-                'slug' => 'office-group-photo',
+                'image' => 'https://instagram.fpku1-2.fna.fbcdn.net/v/t51.82787-15/728786431_18121449754783224_1959732146962004143_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzkyNTcwMTI5MDAyMzcxMjU0Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzI3Ny5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=pq21caWrN6AQ7kNvwHBDAIN&_nc_oc=AdqOnwCspsdtYkIqzbdwJNw4IIfkuBKvlCfk4aQVRC3DemwZDzF9sFRK5OOkPyQz_D8&_nc_ad=z-m&_nc_cid=1101&_nc_zt=23&_nc_ht=instagram.fpku1-2.fna&_nc_gid=IuMPMtL-Tvrnp4jvi1BGtw&_nc_ss=7a22e&oh=00_AQAXIdi9dsLYqS4HIu9trOdkdkD-231GXA19zm3X1z9yGA&oe=6A6CD838',
+                'title' => 'Group Photo',
+                'slug' => 'group-photo',
                 'subtitle' => 'A warm moment of teamwork and togetherness.',
-                'description' => 'A collection of office group moments, capturing the essence of collaboration and camaraderie.',
-                'keywords' => ['office', 'team', 'collaboration'],
+                'description' => 'A collection of group moments, capturing the essence of collaboration and camaraderie.',
+                'keywords' => ['group', 'team', 'collaboration'],
             ]);
         }
 
