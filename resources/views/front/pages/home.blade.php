@@ -138,7 +138,7 @@
 
 
     <!-- Journal -->
-    <section class="border-t border-black/10 px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40" id="journal">
+    {{-- <section class="border-t border-black/10 px-6 py-24 sm:px-10 sm:py-32 lg:px-16 lg:py-40" id="journal">
         <div class="mx-auto max-w-[1400px]">
             <div class="reveal mb-16 flex flex-col gap-8 sm:mb-24 md:flex-row md:items-end md:justify-between">
                 <div>
@@ -255,7 +255,9 @@
                 </article>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+
     <!-- Film Feature -->
     <section class="relative min-h-[760px] overflow-hidden bg-black text-white" id="films">
         <img alt="Wedding ceremony prepared for a film" class="absolute inset-0 h-full w-full object-cover opacity-55"
@@ -267,7 +269,7 @@
                 <h2 class="font-display text-6xl leading-[.9] sm:text-8xl lg:text-[110px]">A Love Beyond Words</h2>
                 <p class="mt-8 max-w-lg text-sm font-light leading-7 text-white/70">A cinematic celebration of the
                     small gestures, deep glances, and unscripted moments that make a wedding day unforgettable.</p>
-                <a class="group mt-10 flex items-center gap-5 text-[9px] uppercase tracking-[.28em]" href="story.html">
+                <a class="group mt-10 flex items-center gap-5 text-[9px] uppercase tracking-[.28em]" href="#">
                     <span
                         class="grid h-16 w-16 place-items-center rounded-full border border-white/55 transition-all duration-500 group-hover:bg-white group-hover:text-black">
                         <svg class="ml-1 h-5 w-5" fill="currentColor" viewbox="0 0 24 24">
@@ -291,8 +293,6 @@
                 </div>
                 <div class="flex gap-5 text-[9px] uppercase tracking-[.22em]">
                     <a class="border-b border-black/25 pb-1 hover:border-black" href="#">Instagram</a>
-                    <a class="border-b border-transparent pb-1 hover:border-black" href="#">Facebook</a>
-                    <a class="border-b border-transparent pb-1 hover:border-black" href="#">YouTube</a>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-2 md:grid-cols-4 lg:gap-3">
@@ -426,7 +426,7 @@
                     We pay attention to the light, the energy, the unexpected laughter, and the quiet details that
                     reveal who you truly are.</p>
                 <a class="mt-10 inline-flex items-center gap-4 border-b border-black/30 pb-2 text-[9px] uppercase tracking-[.24em] transition-all hover:gap-7 hover:border-black"
-                    href="about.html">Read our story <span>→</span></a>
+                    href="{{ route('about') }}">Read our story <span>→</span></a>
             </div>
         </div>
     </section>

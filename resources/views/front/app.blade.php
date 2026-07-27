@@ -33,7 +33,8 @@
 
     </main>
     @include('front.partials.footer')
-    @include('front.partials.back-to-top')
+    {{-- @include('front.partials.back-to-top') --}}
+    @include('front.partials.whatsapp-button')
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const body = document.body;
