@@ -32,8 +32,38 @@ class User extends Authenticatable
         ];
     }
 
-    public function getImageUrlAttribute(): ?string
+    public function getImageUrlAttribute(): string
     {
-        return $this->image ? Storage::url($this->image) : null;
+        $image = $this->image;
+
+        if (!$image) {
+            return 'https://res.cloudinary.com/dh0tzenpm/image/upload/v1785120553/place-user_z5vnnu.png';
+        }
+
+        if (str_starts_with($image, 'http://') || str_starts_with($image, 'https://')) {
+            return $image;
+        }
+
+        if (str_starts_with($image, 'users/')) {
+            return asset('storage/' . $image);
+        }
+
+        return asset('storage/users/' . $image);
+    }
+
+    public function getInstagramHandleAttribute(): string
+    {
+        $insta = $this->instagram;
+
+        if (!$insta) {
+            return '@emilyqueenstudio';
+        }
+
+        if (str_starts_with($insta, 'http://') || str_starts_with($insta, 'https://')) {
+            $path = trim((string) parse_url($insta, PHP_URL_PATH), '/');
+            return $path ? '@' . $path : '@emilyqueenstudio';
+        }
+
+        return '@' . ltrim($insta, '@');
     }
 }

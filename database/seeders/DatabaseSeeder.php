@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
 
         if (!User::where('email', 'fajri@gariskode.com')->exists()) {
             User::create([
+                'image' => 'https://res.cloudinary.com/dh0tzenpm/image/upload/v1781189217/fajri-rinaldi-chan_tix8d9.png',
                 'order' => 1,
                 'position' => 'Administrator',
                 'name' => 'Fajri Rinaldi Chan',
@@ -83,7 +84,7 @@ class DatabaseSeeder extends Seeder
             ]);
 
             Photography::create([
-                'image' => 'https://instagram.fpku1-3.fna.fbcdn.net/v/t51.82787-15/670772539_18115049188783224_4200057855025342679_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzg4MTQ4ODMxODMwNzMwOTY2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjQ1OC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=3nxQL8NA2G4Q7kNvwHQGcdc&_nc_oc=Adqa4FC63ZRmfCricCCPxYPRM9zsGo3hStbYJv1t2q-vYsToM7YSbLfDZddgfxpGLv4&_nc_ad=z-m&_nc_cid=1101&_nc_zt=23&_nc_ht=instagram.fpku1-3.fna&_nc_gid=HxMu7_Pkfh6yHPMtO1-YPg&_nc_ss=7a22e&oh=00_AQCOhh4u-AtXuOm2T2YhtWcXYL-lBfs-kUdP8jpUxsjT_Q&oe=6A6C8CAA',
+                'image' => 'https://instagram.fpku1-2.fna.fbcdn.net/v/t51.82787-15/670912381_18115049197783224_1734346122907614738_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&_nc_cat=106&ig_cache_key=Mzg4MTQ4ODMzNzQ1MDE3MDAzMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjQ1OC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=-LsjaAwHmQEQ7kNvwHow9qj&_nc_oc=AdqYcPU0_dfGVm-tP0NxFcfEImgBDu31ImaTX9tHCyFe_ZpwJpVLy8d6HZQfhdMHJVQ&_nc_ad=z-m&_nc_cid=1101&_nc_zt=23&_nc_ht=instagram.fpku1-2.fna&_nc_gid=HxMu7_Pkfh6yHPMtO1-YPg&_nc_ss=7a22e&oh=00_AQAlSNAt48eOClZmFAYWk7Z1dHTAMp51Ur_b2UbSh6Pycg&oe=6A6C8F06',
                 'title' => 'Warm Family',
                 'slug' => 'warm-family',
                 'subtitle' => 'Cherished moments, laughter, and love.',

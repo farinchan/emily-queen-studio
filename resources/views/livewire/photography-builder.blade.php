@@ -369,6 +369,65 @@
                             </section>
                         `
                     },
+                    {
+                        id: 'section-story-article',
+                        label: '✉️ Story',
+                        category: 'Page Sections',
+                        content: `
+                             <article class="px-6 py-24 sm:px-10 sm:py-32 lg:px-16">
+                                <div class="prose-story mx-auto max-w-3xl">
+                                    <p class="text-xl leading-9 text-black/70">Above the valleys of Cappadocia, a quiet morning became a portrait of
+                                    partnership: shared laughter, patient pauses, and the kind of closeness that needs no direction.</p>
+                                    <h2>A landscape with room to breathe.</h2>
+                                    <p>The session began before sunrise, while the streets were still blue and the first balloons were being
+                                    prepared. Rather than forcing a sequence of poses, the team followed the couple through the landscape and
+                                    allowed movement to create the photographs.</p>
+                                    <p>What emerged was less a production and more a record of two people enjoying a place together. Wind, distance,
+                                    and changing light gave every frame a different rhythm.</p>
+                                </div>
+                                <div class="mx-auto mt-20 grid max-w-[1400px] gap-5 md:grid-cols-2"><button
+                                    data-lightbox="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button><button
+                                    data-lightbox="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1600&q=88"
+                                    class="image-zoom overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=1600&q=88"
+                                        alt="Story gallery" class="h-full w-full object-cover"></button></div>
+                                <div class="mx-auto mt-24 max-w-3xl border-t border-black/15 pt-12">
+                                    <p class="text-[9px] uppercase tracking-[.3em] text-[#817a72]">Credits</p>
+                                    <div class="mt-6 grid gap-4 text-sm leading-7 text-black/65 sm:grid-cols-2">
+                                    <p>Photography: AXIOO Team<br>Styling: Studio Concept</p>
+                                    <p>Location: Cappadocia<br>Published: June 2026</p>
+                                    </div>
+                                </div>
+                                </article>
+                        `
+                    },
 
                     // GALLERY GRIDS
                     {

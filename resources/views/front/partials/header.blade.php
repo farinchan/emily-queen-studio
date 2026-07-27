@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <a class="py-10 transition-opacity hover:opacity-60" href="#contact">About</a>
+            <a class="py-10 transition-opacity hover:opacity-60" href="{{ route('about') }}">About</a>
             <a class="py-10 transition-opacity hover:opacity-60" href="#contact">Get in Touch</a>
         </nav>
         <div class="hidden items-center gap-7 lg:flex">
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl"
-                href="#contact">About</a>
+                href="{{ route('about') }}">About</a>
             <a class="mobile-link block border-b border-white/15 py-5 font-display text-4xl" href="#contact">Get
                 in Touch</a>
         </nav>
