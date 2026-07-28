@@ -23,6 +23,47 @@ body {
   font-family: var(--font-display);
 }
 
+/* Fluid & Responsive Typography Helpers */
+.instagram-handle-heading {
+  font-size: clamp(1.35rem, 4vw, 2.25rem) !important;
+  line-height: 1.25 !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-base { font-size: 1rem; line-height: 1.5rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-5xl { font-size: 3rem; line-height: 1; }
+.text-6xl { font-size: 3.75rem; line-height: 1; }
+.text-7xl { font-size: 4.5rem; line-height: 1; }
+
+@media (min-width: 640px) {
+  .sm\:text-sm { font-size: 0.875rem !important; line-height: 1.25rem !important; }
+  .sm\:text-base { font-size: 1rem !important; line-height: 1.5rem !important; }
+  .sm\:text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+  .sm\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
+  .sm\:text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
+  .sm\:text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+  .sm\:text-5xl { font-size: 3rem !important; line-height: 1 !important; }
+  .sm\:text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
+  .sm\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
+  .sm\:text-8xl { font-size: 6rem !important; line-height: 1 !important; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+  .lg\:text-5xl { font-size: 3rem !important; line-height: 1 !important; }
+  .lg\:text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
+  .lg\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
+  .lg\:text-8xl { font-size: 6rem !important; line-height: 1 !important; }
+}
+
 .image-zoom img {
   transition: transform 1.2s cubic-bezier(.2, .7, .2, 1);
 }
@@ -59,7 +100,13 @@ body {
 }
 
 #home {
-  min-height: 680px;
+  min-height: 560px;
+}
+
+@media (min-width: 640px) {
+  #home {
+    min-height: 680px;
+  }
 }
 
 .hero-slide > img {
@@ -82,7 +129,6 @@ body {
     transform: none;
   }
 }
-
 
 /* Multi-page components */
 .page-hero::after {
