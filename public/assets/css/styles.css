@@ -178,6 +178,46 @@ body {
   }
 }
 
+/* Bulletproof Responsive Google Maps Embed */
+.responsive-map-container {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 350px !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.responsive-map-container iframe,
+.responsive-map-container embed,
+.responsive-map-container object {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  min-height: 350px !important;
+  border: 0 !important;
+  filter: grayscale(85%);
+  transition: filter 0.5s ease;
+}
+
+.responsive-map-container iframe:hover {
+  filter: grayscale(0%);
+}
+
+@media (min-width: 640px) {
+  .responsive-map-container {
+    min-height: 420px !important;
+  }
+  .responsive-map-container iframe,
+  .responsive-map-container embed,
+  .responsive-map-container object {
+    min-height: 420px !important;
+  }
+}
+
 .wa-button-position {
   position: fixed !important;
   bottom: 50px !important;

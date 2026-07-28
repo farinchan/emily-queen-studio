@@ -155,23 +155,20 @@
             </form>
         </div>
     </section>
-    <section class="grid min-h-[480px] bg-[#dfd5c7] lg:grid-cols-2">
-        <div class="min-h-[400px] relative">
+    <section class="grid min-h-[420px] bg-[#dfd5c7] lg:grid-cols-2">
+        <div class="responsive-map-container">
             @if (!empty($settings['maps_embed']))
-                <div
-                    class="h-full min-h-[400px] w-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:min-h-[400px] [&>iframe]:border-0 grayscale">
-                    {!! $settings['maps_embed'] !!}
-                </div>
+                {!! $settings['maps_embed'] !!}
             @else
-                <iframe class="h-full min-h-[400px] w-full grayscale" title="Studio location" loading="lazy"
+                <iframe class="h-full min-h-[350px] sm:min-h-[420px] w-full" title="Studio location" loading="lazy"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=106.75%2C-6.25%2C106.9%2C-6.1&amp;layer=mapnik"></iframe>
             @endif
         </div>
-        <div class="flex items-center px-8 py-20 sm:px-16">
+        <div class="flex items-center px-6 py-12 sm:px-16 sm:py-20">
             <div>
                 <p class="text-[9px] uppercase tracking-[.3em] text-[#817a72]">Studio visits</p>
-                <h2 class="mt-5 font-display text-6xl">By appointment only.</h2>
-                <p class="mt-6 max-w-lg text-sm leading-8 text-black/65">
+                <h2 class="mt-4 font-display text-4xl sm:text-6xl">By appointment only.</h2>
+                <p class="mt-4 sm:mt-6 max-w-lg text-sm leading-7 sm:leading-8 text-black/65">
                     {{ !empty($settings['address']) ? $settings['address'] : 'Our consultation spaces are designed for private conversations, album reviews, and creative planning. Contact the team before visiting.' }}
                 </p>
             </div>
